@@ -1,0 +1,33 @@
+// 외부 scss @import 불러오기
+@use './common.scss' as*;
+
+// 변수 적용 선택자
+main{
+    width:500px;
+    @include flex-between;
+    @include bg1;
+    background-image: url();
+    h1 {color:$color-blue;
+    }
+    p {color:$color-red;
+        &:hover {color:$color-blue;}
+    }
+    >div.box {
+        background-color: #ff0;
+        >input {
+            background-color: aquamarine;
+            &:hover {background-color: #aaa;}
+            &[type=text] {border: 1px solid $color-blue;}
+        }
+        >span {
+            background-color: #222;
+            color:#fff
+        
+        }
+        >span{
+            >em{color: #f00;}
+            &:nth-child(3) {border:5px solid blue;
+            background-color: $color-red;}
+        }
+    }
+}

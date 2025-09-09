@@ -197,4 +197,4 @@ ex) console.log(greeting,'잘가!')
 ## typeof() 데이터 타입 실행함수
 ## print() 출력함수
 ## prompt() 질문 답변 함수.
-## confirm() ; 확인 취소창 실행
+## confirm() 확인 취소창 실행

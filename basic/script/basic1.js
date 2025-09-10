@@ -38,7 +38,7 @@ let age=10;
 let height=130;
 let liveplace='인천';
 let move='이사'
-const plus = 1;
+const plus = 1; (원시형)
 console.log(namae, age, height, liveplace)
 //Q. 김가을은 내년에 11살 입니다.
 console.log(`${namae}은 내년에 ${age+plus}살 입니다.`)

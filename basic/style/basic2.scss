@@ -1,0 +1,52 @@
+//basic2.scsss
+$main-color:aqua;
+$sub-color:yellow;
+@mixin flex-align-center {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+@mixin after_de{
+    content:'';
+    display: block;
+    position: absolute;
+    background-color: black;
+}
+
+header {
+    @include flex-align-center;
+    flex-flow: row nowrap;
+    background-color: $main-color;
+    h1 {color: $sub-color;}
+    nav {
+        .gnb {@include flex-align-center;
+            flex-flow: column nowrap;
+            >li {
+                >a {
+                    &::after{
+                    @include after_de;
+                    width : 20px;
+                    height: 15px;
+                    left : 0;
+                    top: 0;
+                    }
+                    &:hover {color: $sub-color;}
+                }
+                .lnb {
+                    >li {
+                        >a{
+                            &::after{
+                                @include after_de;
+                                width : 20px;
+                                height: 15px;
+                                right : 0;
+                                top: 0;
+                            }
+                            &:hover {color: $sub-color;}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

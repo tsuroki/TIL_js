@@ -1,13 +1,40 @@
-#slide_container {
-    .slide_wrap {
-        .slide{
-            
-        }
-        .slide2{
+$purple-color : #fa23d6;
+$coral-color : #fa2372;
 
-        }
-        .slide1{
-
-        }
-    }
+@mixin slide_wh-size {
+    width: 800px; height: 350px;
 }
+@mixin flex-row-no-cen-cen {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin border {
+    border: 1px solid;
+}
+
+#slide_container {
+    background-color: aquamarine;
+    width: 800px;
+    overflow: hidden;
+    }
+
+    .slide_wrap {background-color: bisque;
+        @include flex-row-no-cen-cen;
+        width: calc(800px*2);
+        .slide{@include slide_wh-size;
+        }
+        
+        .slide1{background-color: blue;
+            @include border;
+            border-color: $purple-color;
+        }
+
+        .slide2{background-color:red;
+            @include border();
+            border-color: $coral-color;
+        }
+        
+    }

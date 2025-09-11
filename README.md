@@ -469,5 +469,9 @@ let 함수이름 function() {} 익명 함수
 
 ## 화살표 함수
 ES6에서 도입된 간결한 함수 표현식.
-const 변수 =(매개변수) => {returna a+b;}
+const add =(매개변수) => {returna a+b;}
 console.log(add(2,3))
+
+매개변수가 1개일 경우 괄호 생략이 가능하다. 하지만 값이 추가될 수 있으므로 쓰는걸 추천한다.
+const add = name => {returna a+b;}
+console.log(name)

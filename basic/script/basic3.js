@@ -173,4 +173,8 @@ hello2('KIM')
 const hello3 = (user) =>{
     return console.log('hello'+user)
 }
-hello3(lee)
+
+let me = 'me'
+
+hello3(me
+)

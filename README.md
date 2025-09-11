@@ -475,3 +475,35 @@ console.log(add(2,3))
 매개변수가 1개일 경우 괄호 생략이 가능하다. 하지만 값이 추가될 수 있으므로 쓰는걸 추천한다.
 const add = name => {returna a+b;}
 console.log(name)
+
+---
+# WINDOW 객체
+## BOM (browser object model)
+windowsms BOM의 최상위 경로
+
+##BOM 함수 종류
+window.alert
+window.prompt()
+window.confirm()
+window.location.href; ( )
+window.location.href="값"
+
+window.print()
+window.document.write()
+window.open()
+window.pen(ul 등)
+
+---
+
+DOM document object Model -> 돔 트리
+DOM  트리를 구성하는 노드.
+
+getElementsByTagName -> 지정된 태그 이름을 가진 **모든 HTML** 요소를 찾아 HTML 노드로 반환
+getElementsByClassName -> 클래스 이름을 가슨 모든 HTML 요소를 찾아 HTML노드로 반환
+getElementsById -> 다른 getElements와 달리, id는 중복 요소가 없기 때문에 index슬롯을 지정하지 않아도 된다. 그러나 변수명 충돌, 그리고 유지보수 면에서 어려움을 겪을 수 있으므로 실무에선 변수 선언이 필요하다.
+
+querySelector -> 지정된아이디, 클래스, 태그 이름을 가진 첫번째 HTML요소를 찾아 HTML 요소로 전환.
+
+querySelectorAll -> 지정된아이디, 클래스, 태그 이름을 가진 모든 HTML요소를 찾아 인덱스와 함께 HTML 요소로 전환.
+
+우선순위 : 인라인스타일 > # > . > tag

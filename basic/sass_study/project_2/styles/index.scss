@@ -1,0 +1,89 @@
+@use './common.scss' as *;
+
+#slide_wrap {
+    background-color: aqua;
+    width: 100%;
+    height: 100vh;
+    padding-top: 80px;
+    .slide_container {
+        margin: 0 auto;
+        background-color: aquamarine;
+        width: 1350px;
+        height: 750px;
+        position: relative;
+        .slide {
+            }
+        .slide1 {
+            width: 100%;
+            height: 100%;
+            padding: 100px 80px 150px;
+            background-color: #ffffd4;
+            background-image: url(../images/slide_bnr_1.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 50px;
+            .title_contents {
+                span {
+                    font-size: $d-title52;
+                    font-weight: $d-weight-bold;
+                    line-height: $text-height-120;
+                }
+                p {
+                    margin-top: 20px;
+                    font-size: $d-bnr-content;
+                    font-weight: $d-weight-medium;
+                }
+            }
+            .bnr_link {
+                @include position-ab;
+                bottom : 100px;
+                left : 80px;
+                @include flex-row;
+                .edu_btn{
+                    width: 240px;
+                    height: 54px;
+                    padding: 6px 24px;
+                    background-color: $color-black;
+                    @include flex-row;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 27px;
+                    span{
+                        font-size:$d-btn18;
+                        color: $color-white;
+                        line-height: $text-height-150;
+                    }
+                }
+                .news_btn{
+                    width: 240px;
+                    height: 54px;
+                    padding: 6px 24px;
+                    border: 1px solid $color-black;
+                    line-height: $text-height-150;
+                    @include flex-row;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 27px;
+                    img {
+                        width: 24px;
+                        height: 24px;
+                    }
+                    span {
+
+                    }
+                }
+            }
+        }
+        .slide_page_btn {
+            .page {
+                .current {}
+                .bar {}
+                .total {}
+            }
+            .btn_g {
+                #prev{}
+                #next{}
+            }
+        }
+    }
+}

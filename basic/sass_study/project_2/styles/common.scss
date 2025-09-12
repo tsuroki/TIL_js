@@ -1,0 +1,26 @@
+$color-black : #000;
+$color-white : #fff;
+$color-kakao-yellow : #ffd000;
+
+$d-title52 : 3.25rem; 
+$d-bnr-content : 1.875rem;
+$d-btn18: 1.125rem;
+
+$d-weight-bold: 700;
+$d-weight-semibold:600;
+$d-weight-medium:500;
+
+$text-height-120 : 1.2;
+$text-height-150 : 1.5;
+
+@mixin flex-row {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 10px;
+}
+
+@mixin position-ab {
+    position:absolute;
+    left: 0;
+    bottom: 0;
+}

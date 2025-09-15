@@ -507,3 +507,128 @@ querySelector -> 지정된아이디, 클래스, 태그 이름을 가진 첫번�
 querySelectorAll -> 지정된아이디, 클래스, 태그 이름을 가진 모든 HTML요소를 찾아 인덱스와 함께 HTML 요소로 전환.
 
 우선순위 : 인라인스타일 > # > . > tag
+
+---
+
+# 형 변환 메소드
+
+## 암시적형변환
+스크립트가 사용자 동의 없이 자동으로 데이터 형태를 결정하는 형태
+ex) window.prompt();
+    <input type="text" value="abc" name="user_id"> 등
+    console.log(typeof(객체명))을 통해 형태 확인하기.
+## 명시적형변환
+개발자가 직접 데이터타입을 스크립트로 명령하여 강제로 변환하는 형변환 작업
+ex) string() / **number()**
+
+---
+
+# DOM 이벤트 처리기
+
+### Event?
+사용자의 행동에 따른 웹/앱이 특정 결과를 실행하는 행위
+Event 앞에 on을 붙이면 이벤트 리스너가 된다 ex) onclick
+
+* 마우스 이벤트
+on+ **click** : 특정 요소를 마우스로 클릭했을 때 이벤트 발생
+    mouseover : 특정 요소에 마우스 포인터가 올라갈 때 이벤트 발생
+    mouseout : 특정 요소에서 마우스 포인터가 이탈할 때
+    mouseup : 특정 요소를 마우스로 눌렀다가 떼었을 경우
+    mousemove : 특정요소에서 마우스 포인터를 움직일 경우
+
+* 키보드 이벤트
+on+ keydown -> 특정 키를 누를 경우
+    keyup -> 특정 키를 누르고 뗀 경우
+
+* 기타 이벤트
+on+ focus-> 특정 요소에 포커스를 줄 경우 이벤트 발생
+    blur -> 특정 요소에서 포커스가 벗어난 경우.
+    submit -> submit 버튼을 클릭할 경우
+    reset -> reset 버튼을 클릭할 경우
+    load -> 페이지 로딩이 완료될 경우.
+
+    이러한 이벤트로 실행되는 함수를 콜백함수[Call back Function] 이라고 부른다.
+
+---
+
+# 콜백 함수 [Callback]
+1. 고객(사용자)이 커피 주문 요청
+2. 점원(함수)이 커피를 제조하고 손님에게 건네줌(call back)
+
+순서 : 고객 요청 -> 점원 확인
+콜백 : 고객 확인 <- 점원이 고객 호출
+
+ex) DOM요소(document)addEventListner(이벤트명, 실행함수명, 옵션)
+
+특정 이벤트 발생 시 해당 이벤트 처리 루틴 = 콜백함수
+* 이벤트명  : 자바 스크립트에서 발생하는 이벤트명
+* 실행함수명 : 이벤트 발생 시 실행할 함수명
+* 옵션 : 생략 가능한 요소. 자식과 부모요소에서 발생하는 버블링을 제어하는 옵션.
+
+---
+
+## 콜백 함수 정리
+### 매개변수없는 콜백함수 호출
+* `DOM.addEventLister('이벤트', 콜백함수호출)`
+* `function 콜백함수명(){return 반복실행}`
+
+### 매개변수가 있을경우
+* `DOM.addEventLister('이벤트', ()=> 콜백함수호출(매개변수 입력))`
+* `DOM.addEventLister('이벤트', function(){콜백함수(매개변수)})`
+* `function 콜백함수(매개변수){return 반복실행}`
+
+### 매개변수가 있는 콜백함수 호출(클로저활용)
+* `DOM.addEventLister('이벤트', 콜백함수호출)`
+* `function 콜백함수(매개변수){return function(){반복실행}}`
+
+요소 속성 값 읽고 쓰기
+요소명.속성명
+<a href="https://naver.com" id="link" target="_blank">naver</a>
+
+## innerHTML
+요소의 HTML 콘텐츠 읽기, 수정, 삭제 속성
+HTML태그를 포함하여 처리.
+
+## innerTEXT
+요소의 텍스트 읽기, 수정, 삭제 속성
+HTML 태그는 무시하고 텍스트만 반환.
+
+## textContent
+요소의 텍스트 읽기, 수정, 삭제 속성
+innerText보다 빠른 수행 가능.
+HTML태그는 무시하고 텍스트만 반환.
+
+---
+
+sass 파일 관리 & sass를 이용한 반응형 웹
+
+css: @media screen and (max-width:1200px){
+    main {}
+    main h1 {}
+}
+
+scss @media screen and (max-width:1200px){
+    main{
+        h1{
+
+        }
+    }
+}
+
+어렵지 않다.
+
+---
+
+## SASS 파일 관리
+
+### main.scss
+//@use './common.scss' as c;
+//@use './index.scss' as c;
+//@use './footer.scss' as c;
+
+### common.scss
+$변수명 : 등록값;
+$변수명 : 등록값;
+
+@mixin 그룹변수명 { 반복속성 : 값 ; 반복 속성 : 값}
+@mixin 그룹변수명 { 반복속성 : 값 ; 반복 속성 : 값}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./style/reset.css">
+    <!-- 웹폰트 -->
+    <title>Document</title>
+    <script src="./script/DOM.js" defer></script>
+
+</head>
+<body>
+    <div class="box">
+        <button type="button" id="order">주문하기</button>
+        <button type="button" id="cart_in">장바구니 담기</button>
+    </div>
+    <main>
+        <section>
+            <input type="search" name="s" id="s" placeholder="검색어를 입력하세요"></input>
+            <button type="button" id="search_btn">검색</button>
+        </section>
+        <section>
+            <input type="text" name="num" id="num" value="1"></input>
+            <button type="button" id="cart_btn">장바구니</button>
+        </section>
+    </main>
+    <div class="box">
+        <button type="button" id="order">
+            주문하기
+        </button>
+    </div>
+    <button type="button" value='' class="login" id="id">아이디 중복확인</button>
+    <button type="button" value='' class="password" id="pw">패스워드 중복확인</button>
+    <hr>
+    <textarea name="review" value='' id="review" placeholder="내용 입력해주세요"></textarea>
+    <!-- 배경 버튼 클릭 시 부모 article 배경색 변경하기. -->
+    <article>
+        <button type="button" class="bg" id="bg_btn1">배경1</button>
+        <button type="button" class="bg" id="bg_btn2">배경2</button>
+        <button type="button" class="bg" id="bg_btn3">배경3</button>
+        <p>현재 배경 색상 : #F5D2D2</p>
+    </article>
+</body>
+</html>
+
+<!-- js에서 style부여
+    -> 객체.style.속성 = 값 
+    기억해둘것. -->

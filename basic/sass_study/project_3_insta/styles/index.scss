@@ -1,0 +1,107 @@
+@use './common.scss' as *;
+
+body{
+    background-color: #add8e8;
+    width: 100%;
+    height: 100vh;
+    margin-top: 80px;
+    #wrap {
+        background-color: #fff;
+        width: 420px;
+        height: max-content;
+        margin: 0 auto;
+        box-shadow: 10px 10px 10px rgba($color: #000000, $alpha: 0.1);
+    }
+        /* -------------------- */
+            .top {
+                @include flex-row;
+                background-color: #fff;
+                padding: 10px;
+                line-height: 24px;
+                gap: 20px;
+                position: relative;
+                .profile{
+                    img {
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 15px;
+                        float: left;
+                    }
+                    span {
+                        font-size: $font-size18;
+                        font-weight: 500;
+                        letter-spacing: -0.02;
+                        float: left;
+                        margin-left: 10px;
+                        transform: translateY(4px);
+                    }
+                }
+                a{
+                    font-size: $font-size14;
+                    position: absolute;
+                    right: 20px;
+                }
+            }
+        /* -------------------- */
+        #photo {
+            width: 420px;
+            height: 445px;
+            @include bgin;
+            background: url(https://images.unsplash.com/photo-1551918120-9739cb430c6d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+        }
+        /* -------------------- */
+    .container {
+    #menu{
+        padding :0 15px;
+        margin : 10px 0;
+        @include flex-row;
+        gap: 20px;
+        position: relative;
+        background-color: #fff;
+        .left{
+            img {
+                @include icon-size;
+            }
+            img:nth-child(1) {
+                margin-right: 5px;
+                &:hover {
+                }
+            }
+            img:nth-child(2) {
+                margin-right: 5px;
+            }
+        }
+        .scrap {
+            font-size: $font-size14;
+            position: absolute;
+            right: 20px;
+        }
+    }
+    /* -------------------- */
+        #text_contents{
+            background-color: #fff;
+            padding: 0 15px 20px;
+            p {
+                margin-bottom: 5px;
+                font-size: $font-size18;
+            }
+            p:nth-child(4){
+                margin-bottom: 0px;
+            }
+            .likes {
+
+            }
+            .username {
+                
+            }
+            .comments {
+                color: $color-gary;
+                font-size: $font-size12;
+            }
+            .date {
+                font-size: $font-size14;
+            }
+        }
+    }   
+/* -------------------- */
+}

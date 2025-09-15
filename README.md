@@ -632,3 +632,67 @@ $변수명 : 등록값;
 
 @mixin 그룹변수명 { 반복속성 : 값 ; 반복 속성 : 값}
 @mixin 그룹변수명 { 반복속성 : 값 ; 반복 속성 : 값}
+
+---
+
+# 이벤트 객체
+* 사용자가 DOM과 관련된 이벤트 발생 시 이벤트 관련정보가 생성됨.
+이 정보를 'Event Object / 이벤트 객체' 라고 칭한다.
+ex) 마우스 이벤트 발생 시 마우스 위치 정보
+ex) 키보드 이벤트 발생 시 어떤 키를 눌렀을 지에 대한 정보 등
+
+## 이벤트 객체의 자주 사용하는 속성 및 함수
+1. currentTarget : 현재 이벤트 처리중인 요소, 이벤트 핸들러 내부 this와 동일
+2. preventDefault() : 이벤트의 기본 동작 취소
+3. target : 이벤트 실제 및 적용 요소
+4. type : 발생하는 이벤트 타입
+5. client X, Client Y : 마우스 이벤트 발생 시 클릭한 커서의 상대 좌표
+
+---
+
+# this
+함수가 호출될 시 해당 함수를 소유한 객체를 참조하는 키워드
+
+* 익명함수는 **이벤트를 호출하는 객체** 에 따라 this가 결정됨
+ex) input이 객체면 this=input
+ex) button이 객체면 this=button
+
+* 화살표 함수는 상위 스코프의 this를 사용함
+ex) 전역 스코프라면 this는 window객체를 인식.
+ex) 위와 같은 문제로 화살표함수는 this를 사용하지 않음.
+
+## 익명함수의 this
+const aTag=document.querySelector('click',function()){
+    console.log(this); 호출하는 객체에 따라 this결정. 여기서 this는 aTag임
+}
+
+## 화살표 함수의 this
+
+---
+
+# Boolean
+### 참(true) 또는 거짓(False) 두가지 값 중 하나의 데이터 형식 조건문, 논리연산자, 논리적 판단 등에 사용함.
+
+ex) 날씨가 좋은가?
+true -> 산책을 간다.
+false -> 방콕을 한다.
+
+ex) 날씨가 추운가?
+true -> 체육관에서 3대운동 실시
+false -> 집에서 맨몸운동 실시
+
+---
+
+# false, falsy & true, truthy
+### False로 평가되는 값 -> falsy / True로 평가되는 값 -> truthy
+거짓으로 평가되는 값
+-> false, null, undefined, NaN, 0, " "(빈 문자열)
+
+참으로 평가되는 값
+-> 거짓을 제외한 나머지 값
+-> 빈 배열, 빈 객체는 true []//빈 배열, {}//빈 객체
+
+Boolean()
+불린 함수를 사용했을 때, Falsy값들은 False로 truthy값들은 true로 리턴됨.
+
+숫자로 표현할 수 있냐 없냐에 따라, true, false 값이 결정되기도 함.

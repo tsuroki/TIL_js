@@ -1,0 +1,27 @@
+$color-white : #fff;
+$color-gary : #aaa;
+
+$font-size18 : 1.125rem;
+$font-size14 : 0.875rem;
+$font-size12 : 0.75rem;
+
+$fw-bold : 600;
+$fw-medium : 500;
+$lh-24px : 1.5;
+
+@mixin icon-size{
+    width: 30px;
+    height: 30px;
+}
+
+@mixin flex-row{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+@mixin bgin {
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+}

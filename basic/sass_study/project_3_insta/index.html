@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <title>Instagram</title>
+    <script src="./script/index.js" defer></script>
+    <style>
+        #popup {
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-100%) scale(0.3);
+            opacity: 0;
+        }
+        #popup svg{
+            fill: #ffffff;
+            fill-opacity: 0.7;
+            stroke: #f5f5f5;
+            stroke-opacity: 0.7;
+            stroke-width: 10px;
+            overflow: visible;
+        }
+    </style>
+</head>
+<body>
+    <main id="wrap">
+        <!-- 팝업 -->
+        <div id="popup">
+            <svg width="208" height="202" viewBox="0 0 208 202" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M127 0.662483V24.2375C144.25 29.2208 158.146 38.8042 168.688 52.9875C179.229 67.1708 184.5 83.2708 184.5 101.287C184.5 119.304 179.229 135.404 168.688 149.587C158.146 163.771 144.25 173.354 127 178.337V201.912C150.767 196.546 170.125 184.519 185.075 165.831C200.025 147.144 207.5 125.629 207.5 101.287C207.5 76.9458 200.025 55.4312 185.075 36.7437C170.125 18.0562 150.767 6.02915 127 0.662483ZM0.5 66.5V135.5H46.5L104 193V8.99999L46.5 66.5H0.5ZM127 55V147.575C136.008 143.358 143.052 137.033 148.131 128.6C153.21 120.167 155.75 110.967 155.75 101C155.75 91.225 153.21 82.1687 148.131 73.8312C143.052 65.4937 136.008 59.2166 127 55Z"/>
+            </svg>
+        </div>
+        <!-- 고정 -->
+        <div class="top">
+            <div class="profile">
+                <img src="./images/profile.jpg" alt="#">
+                <span>username</span>
+            </div>
+            <a href="#">더보기</a>
+        </div>
+        <div id="photo"></div>
+        <div class="container">
+            <div id="menu">
+                <div class="left">
+                    <a href="#"><img src="./images/like_off.png" alt="#"></a>
+                    <a href="#"><img src="./images/comment_off.png" alt="#"></a>
+                    <a href="#"><img src="./images/paper_off.png" alt="#"></a>
+                </div>
+                <a href="#" class="scrap">스크랩</a>
+            </div>
+            <div id="text_contents">
+                <p class="likes"><em>100 likes</em></p>
+                <p class="username">username</p>
+                <p class="comments">view all 20 comments</p>
+                <p class="date">3 Days ago</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

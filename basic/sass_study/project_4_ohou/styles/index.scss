@@ -1,0 +1,293 @@
+@use '../styles/common.scss' as *;
+
+#wrap {
+    header {
+        height: 52px;
+        padding: 0 80px;
+        @include flex-rows;
+        align-items: center;
+        gap: 16px;
+        border: 1px solid $color-gray-75;
+        border-left: 0;
+        border-right: 0;
+        a {
+            font-size: $sel-size-14;
+        }
+        img {
+        }
+    }
+/* main */
+    #main_product {
+    @include content-w;
+        /* path--------------------------------------------------- */
+        .path {
+            padding: 12px 15px;
+            img {
+                width: 7px;
+                line-height: 14px;}
+            a {
+                font-size: $sel-size-14;
+                color: $color-gray-a;
+            }
+        }
+        /* image---------------------------------------------------- */
+        .container {
+            width: fit-content;
+            @include c2-grid;
+            grid-area:  '.left' '.content' ;
+            padding: 0 15px 10px;
+            .left {
+                @include flex-rows;
+                #thumbnail {
+                    @include flex-col;
+                    gap: 10px;
+                    margin-right: 15px;
+                    a{width: 56px;
+                        height: 56px;
+                        border-radius: 5px;
+                        box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
+                    img{
+                        }
+                    }
+                }
+                .overview {
+                    img{
+                        width: 599px;
+                        height: 599px;
+                        border-radius: 10px;
+                        box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
+                    }
+                }
+            }
+            .right{
+                padding : 0 30px;
+                .content {
+                    
+                    .brand {margin : 0 0 30px;
+                        color : $color-gray-75;
+                        margin-top: 20px;
+                        a {}
+                    }
+                    .product_info {
+                        display: flex;
+                        flex-flow: row nowrap;
+                        justify-content: space-between;
+                        align-items: center;
+                        h1 {
+                            font-size: $pn-size-22;
+                        }
+                        .icons {
+                            display: flex;
+                            flex-flow: row nowrap;
+                            justify-content: space-between;
+                            align-items: center;
+                            gap : 5px;
+                            #scrap{
+                            display: flex;
+                            flex-flow: column nowrap;
+                            svg {
+                                @include icon24;
+                                path {fill : $color-point}
+                            }
+                            span {font-size: $sel-size-14;
+                            color:$color-point}
+                        }
+                        #share {
+                            svg {@include icon24;
+                            path {fill : $color-point}}
+                        }
+                        }
+                    }
+                }
+                #review {
+                    margin : 0 0 10px;
+                    .score {
+                        display: flex;
+                        flex-flow: row;
+                        svg {
+                            @include icon13
+                        }
+                        .review_total {
+                            font-size: $review-size-13
+                        }
+                    }
+                }
+                /* price ---------------------------------------------- */
+                .price_wrap {
+                    .original_price {
+                        margin : 0 0 10px;
+                        span {}
+                        del {
+                            color: $color-gray-75;
+                        }
+                        span {
+                            a{
+                                &:hover + .info {
+                                    display:block;
+                                    border-radius: 5px;
+                                    position: absolute;
+                                }
+                                svg {
+                                    @include icon16;
+                                }
+                            }
+                            .info {
+                                display :none;
+                                background-color : $color-white;
+                                width: 300px;
+                                padding: 10px;
+                                font-size: $sel-size-14;
+                                line-height: 1.5;
+                                box-shadow: 4px 4px 8px rgba(0,0,0,0.25)
+                            }
+                        }
+                    }
+                    .total_price {margin : 0 0 10px;
+                        em {
+                            font-weight: $weight-bold;
+                            font-size: $price-size-32;
+                        }
+                        span{
+                            font-size: $price-size-32;
+                        }
+                        img {
+                            width: 60px;
+                            height: 15px;
+                            transform: translateY(2px)
+                        }
+                    }
+                }
+                /* benefit -------------------------------------------------------- */
+                .benefit_ship {
+                    @include r6-c2-grid;
+                    grid-template-areas: 
+                        'title1 cont1'
+                        'title2 cont2'
+                        '. cont3'
+                        '. cont4'
+                        '. cont5'
+                        '. cont6';
+                    dt{ 
+                        margin-top: 10px;
+                        width: fit-content;
+                        &:nth-of-type(1){grid-area: title1;}
+                        &:nth-of-type(2){grid-area: title2}
+                    }
+                    dd{ margin-top: 10px;
+                        margin-bottom: 10px;
+                        em{
+                            font-weight: $weight-bold;
+                        }
+                        &:nth-of-type(1){grid-area: cont1;}
+                        &:nth-of-type(2){grid-area: cont2;}
+                        &:nth-of-type(3){grid-area: cont3;}
+                        &:nth-of-type(4){grid-area: cont4;}
+                        &:nth-of-type(5){grid-area: cont5;}
+                        &:nth-of-type(6){grid-area: cont6;
+                        width: fit-content;
+                        background-color: $color-gray-a;
+                        padding : 10px 20px;
+                        border-radius: 5px;
+                        }
+                    }
+                    }
+                    .box {}
+                }
+                .frm_right{
+                    select {
+                        width: 100%;
+                        font-size : $sel-size-14;
+                        height : 40px;
+                        margin-bottom: 10px;
+                    }
+                    #color_sel {
+                        border: 1px $color-point solid;
+                        border-radius: 5px;
+                        padding: 0 15px;
+                        background : url(../images/arrow_point_color.png) no-repeat right 15px center;
+                        option {}
+                    }
+                    #size {
+                        border: 1px $color-gray-75 solid;
+                        border-radius: 5px;
+                        background: url(../images/arrow_gray_color.png) no-repeat right 15px center;
+                        padding: 0 15px;
+                        option {}
+                    }
+                    .order_list {
+                        background-color: $color-gray-a;
+                        padding : 15px;
+                        position: relative;
+                        .user_selected {margin-bottom: 15px;
+                            font-size: $sel-size-14;
+                        }
+                        .close{
+                            position: absolute;
+                            right: 15px;
+                            top : 15px;
+                        }
+                        .amount_btn{
+                            text-align: center center;
+                            @include flex-rows;
+                            height: 30px;
+                            font-size: $sel-size-14;
+                            .plus {background-color: $color-white;
+                                width : 30px;
+                                border-left: 1px solid $color-gray-a;
+                            }
+                            .minus {background-color: $color-white;
+                                width : 30px;
+                                border-right: 1px solid $color-gray-a;
+                            }
+                            #amount {
+                                margin-bottom: 15px;
+                                width: 30px;
+                                height: 30px;
+                                text-align: center;
+                                }
+                        }
+                        }
+                        .sel_price {
+                            font-size: $sel-size-14;
+                            position: absolute;
+                            right: 15px;
+                            bottom: 15px;
+                        }
+                    }
+                    .order_cost {
+                        @include flex-rows;
+                        justify-content: space-between;
+                        margin : 20px 0;
+                        h2 {}
+                        .price {
+                            font-size: $btn-size-17;
+                            font-weight: $weight-bold;
+                            span {
+                                font-size: $lastprice-size-20;
+                                font-weight: $weight-bold;
+                            }
+                        }
+                    }
+                    .btn {
+                        width: 100%;
+                        @include flex-rows;
+                        gap: 10px;
+                        .bas_btn {
+                            @include btn_set;
+                            width: 100%;
+                        }
+                        #cart_btn {
+                            background-color: $color-white ;
+                            border : 1px solid $color-point;
+                            color: $color-point;
+                        }
+                        #buy_btn {
+                            background-color: $color-point ;
+                            color: $color-white;
+                        }
+                    }
+                }
+                }
+            }
+        
+    footer {}

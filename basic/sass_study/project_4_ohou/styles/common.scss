@@ -1,8 +1,11 @@
+/* common.scss */
 $weight-bold:600;
 $weight-semibold:500;
 
+$lastprice-size-20: 1.25rem;
 $pn-size-22: 1.375rem;
 $price-size-32: 2rem;
+$btn-size-17: 1.0625rem;
 $sel-size-14: 0.875rem;
 $review-size-13: 0.8125rem;
 
@@ -11,17 +14,51 @@ $color-point: #59afff;
 $color-white: #fff;
 $color-gray-bd: #bdbdbd;
 $color-gray-75: #757575;
-$color-gray-dtcolor: #828c94;
+$color-gray-29: #292929;
+$color-gray-lv1: #828c94;
+$color-gray-a: #aaaaaa;
 
-@mixin flex-row {
+@mixin content-w{max-width:1200px; min-width: 320px; margin : 0 auto;}
+
+@mixin flex-rows {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: center;
+    justify-content: flex-start;
     align-content: center;
 }
 @mixin flex-col {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
     justify-content: center;
     align-content: center;
+}
+
+@mixin r6-c2-grid {
+    display: grid;
+    grid-template-rows:  30px 30px 30px 30px 30px 1fr;
+    grid-template-columns: 50px 1fr;
+}
+
+
+@mixin c2-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr}
+
+@mixin icon24 {
+    width: 24px;
+    height: 24px;
+}
+@mixin icon16 {
+    width: 16px;
+    height: 16px;
+}
+@mixin icon13 {
+    width: 13px;
+    height: 13px;
+}
+
+@mixin btn_set {
+    padding : 20px 30px;
+    border-radius: 5px;
+    font-size: $btn-size-17;
 }

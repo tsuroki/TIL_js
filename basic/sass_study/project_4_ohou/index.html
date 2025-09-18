@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/main.css">
     <title>몽쉘 패딩 하네스 |오늘의 집</title>
+    <script src="./script/data.js" defer></script>
     <script src="./script/index.js" defer></script>
 </head>
 <body>
@@ -18,6 +19,12 @@
             <a href="#">커뮤니티</a>
             <a href="#">쇼핑</a>
             <a href="#">인테리어/생활</a>
+            <div class="logbtn">
+                <button type="button" class="login">로그인</button>
+                <button type="button" class="logout">로그아웃</button>
+                <p>상태출력</p>
+            </div>
+            
         </header>
         <main id="main_product">
             <div class="path">
@@ -48,12 +55,12 @@
                         <div class="product_info">
                             <h1>몽쉘 패딩 하네스 올인원 6size 3colors</h1>
                             <div class="icons">
-                                <button type="button" id="scrap">
+                                <a href="#" id="scrap">
                                     <svg class="bookmark" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M0 24V2.66667C0 1.93333 0.335714 1.30556 1.00714 0.783333C1.67857 0.261111 2.48571 0 3.42857 0H20.5714C21.5143 0 22.3214 0.261111 22.9929 0.783333C23.6643 1.30556 24 1.93333 24 2.66667V24L12 20L0 24Z"/>
                                     </svg>
                                     <span>876</span>
-                                </button>
+                                </a>
                                 <button type="button" id="share">
                                     <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M18.3333 24C17.3148 24 16.4491 23.65 15.7361 22.95C15.0231 22.25 14.6667 21.4 14.6667 20.4C14.6667 20.28 14.6972 20 14.7583 19.56L6.17222 14.64C5.8463 14.94 5.46944 15.175 5.04167 15.345C4.61389 15.515 4.15556 15.6 3.66667 15.6C2.64815 15.6 1.78241 15.25 1.06944 14.55C0.356481 13.85 0 13 0 12C0 11 0.356481 10.15 1.06944 9.45C1.78241 8.75 2.64815 8.4 3.66667 8.4C4.15556 8.4 4.61389 8.485 5.04167 8.655C5.46944 8.825 5.8463 9.06 6.17222 9.36L14.7583 4.44C14.7176 4.3 14.6921 4.165 14.6819 4.035C14.6718 3.905 14.6667 3.76 14.6667 3.6C14.6667 2.6 15.0231 1.75 15.7361 1.05C16.4491 0.35 17.3148 0 18.3333 0C19.3519 0 20.2176 0.35 20.9306 1.05C21.6435 1.75 22 2.6 22 3.6C22 4.6 21.6435 5.45 20.9306 6.15C20.2176 6.85 19.3519 7.2 18.3333 7.2C17.8444 7.2 17.3861 7.115 16.9583 6.945C16.5306 6.775 16.1537 6.54 15.8278 6.24L7.24167 11.16C7.28241 11.3 7.30787 11.435 7.31806 11.565C7.32824 11.695 7.33333 11.84 7.33333 12C7.33333 12.16 7.32824 12.305 7.31806 12.435C7.30787 12.565 7.28241 12.7 7.24167 12.84L15.8278 17.76C16.1537 17.46 16.5306 17.225 16.9583 17.055C17.3861 16.885 17.8444 16.8 18.3333 16.8C19.3519 16.8 20.2176 17.15 20.9306 17.85C21.6435 18.55 22 19.4 22 20.4C22 21.4 21.6435 22.25 20.9306 22.95C20.2176 23.65 19.3519 24 18.3333 24Z"/>
@@ -116,18 +123,20 @@
                     <form method="post" class="frm_right">
                         <select name="color_sel" id="color_sel">
                             <option value="none">색상</option>
-                            <option value="black">블랙 (39,900원)</option>
+                            <!-- <option value="black">블랙 (39,900원)</option>
                             <option value="raspberry">라즈베리 (39,900원)</option>
-                            <option value="amond" disabled>아몬드 (39,900원)/품절</option>
+                            <option value="amond" disabled>아몬드 (39,900원)/품절</option> -->
                         </select>
-                        <select name="size" id="size">
+                        <select name="size" id="size" >
                             <option value="none">사이즈</option>
                             <option value="small">s (39,900원)</option>
                             <option value="small_medium">sm (39,900원)</option>
                             <option value="medium">M (39,900원)</option>
                         </select>
                         <div class="order_list">
-                            <p class="user_selected">색상:블랙 / 사이즈:SM</p> 
+                            <div class="information">
+                            색상:<span class="col">블랙</span> / 사이즈: <span class="selsize">SM</span>
+                            </div>
                             <button type="button" class="close">
                                 <svg width="14" height="14" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M2.4 24L0 21.6L9.6 12L0 2.4L2.4 0L12 9.6L21.6 0L24 2.4L14.4 12L24 21.6L21.6 24L12 14.4L2.4 24Z"/>
@@ -163,7 +172,24 @@
                         </div>
                     </form>
                 </div>
+            
+
             </div>
+            <div class="sticky_menu" style="
+            background-color: #f5f5f5;
+            padding : 20px;
+            display:flex;
+            gap:10px;
+            position: sticky;
+            top:0;">
+                <a href="#">상품정보</a>
+                <a href="#">리뷰</a>
+                <a href="#">문의</a>
+                <a href="#">배송/환불</a>
+                <a href="#">추천</a>
+            </div>
+            <div id="product_info" style="height: 1000px; background-color: aqua;">상품정보</div>
+            <div id="review_container" style="height: 1000px; background-color: violet;">리뷰</div>
         </main>
         <footer>empty</footer>
     </div>

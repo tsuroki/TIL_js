@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- 웹 -->
+    <title>Document</title>
+    
+</head>
+<body>
+    <!-- <input type="text" name="userid" id="userid" placeholder="아이디 입력">
+    <input type="password" name="userpw" id="userpw" placeholder="비밀번호 입력"> -->
+    <button type="button" id="loginBtn">로그인</button>
+    <button type="button" id="logoutBtn">로그아웃</button>
+    <p class="result">메세지 출력</p>
+    <script>
+        // 1. 로그인을 위한 변수 설정 (초기상태 설정)
+        localStorage.setItem('isLogin','false')
+
+        // 로그인, 로그아웃 버튼 변수 설정
+        const loginBtn = document.querySelector('#loginBtn')
+        const logoutBtn = document.querySelector('#logoutBtn')
+        // 메세지 변수 설정
+        const resultP = document.querySelector('.result')
+
+        // => 1. 버튼 클릭에 따라 2. p의 메세지 -> 로그인 완료 , 로그아웃 완료 나와야함.
+
+        console.log(loginBtn, resultP)
+        // 2. 로그인 버튼 클릭 시 로그인 메세지 P 출럭
+        loginBtn.addEventListener('click', () => {
+            //상태변경 (로컬스토리지)
+            localStorage.setItem('isLogin','true')
+            resultStatus(); //변경된 상태값에 따라 (변경된 상태가 어떤 상태값을 가지고 있는지 확인) 메세지 출력
+        })
+        // 3. 로그아웃 버튼 클릭 시 로그아웃 메세지 P 출력
+        logoutBtn.addEventListener('click', () => {
+            //상태변경 (로컬스토리지)
+            localStorage.setItem('isLogin','false')
+            resultStatus();
+        })
+
+        //공통 메세지 P 함수
+        function resultStatus() {
+            let statusMsg = '' // 메세지 초기값
+            //상태 가져오기
+            let loginStatusValue = localStorage.getItem('isLogin')
+            //상태에 따라 조건문 분기 제작 (로그인 / 로그아웃)
+            if (loginStatusValue == 'true'){
+                statusMsg = '로그인 완료'
+            } else {
+                statusMsg = '로그아웃 완료'
+            }
+            return resultP.textContent = statusMsg;
+        }
+    </script>
+</body>
+</html>

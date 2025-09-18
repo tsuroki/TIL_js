@@ -826,3 +826,23 @@ if(수행조건){
 * 브라우저가 닫히면 데이터 자동삭제 (휘발성)
 * sessionStorage.setItem('속성', '값')
 * sessionStorage.getItem('속성')
+---
+## 자주쓰는 JS속성과 함수 & TIP
+### 1개의 DOM요소에 이벤트 분기가 2개 이상 있을 경우
+* 조건 분기를 위해 'true'와 'false' 값을 가지는 변수를 만든다.
+* 이벤트 함수 내에 위 변수값 반전 형태 제작하기 '변수 = !변수'
+* 변수에 따라 분기에 나눠 실행되는 조건문 'if' 제작하기
+
+### DOM요소 숨기긱 & form요소 비활성화 하기
+* DOM 요소 숨기기 : 'DOM.style.display = 'none''
+* form>input, textarea, select 등 form 요소 비활성화
+DOM.disabled = true (비활성화) or false(활성화)
+
+### form 관련 자주 쓰는 속성과 함수, 이벤트
+* 'changed' : select 태그 변경시 인식하는 이벤트 종류
+* selectedIndex : select의 선택 option index 확인 속성
+* options : select에 속한 option의 index 전체 속성
+* options[index] : select에 속한 option의 index 확인 속성
+* 객체.속성, 객체.options[], 객체.selectedIndex
+
+---

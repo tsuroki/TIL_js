@@ -26,6 +26,12 @@ $color-gray-a: #aaaaaa;
     justify-content: flex-start;
     align-content: center;
 }
+@mixin flex-rows-cen {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-content: center;
+}
 @mixin flex-col {
     display: flex;
     flex-flow: column nowrap;

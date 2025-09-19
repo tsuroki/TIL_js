@@ -138,11 +138,7 @@ orderList.style.display = 'none'
 // 주문목록 출력(선택한 값이 출력, 주문 금액 변경 됨)
 sizeSel.disabled = true
 
-const addBtn = document.querySelector('.plus')
-const minusBtn = document.querySelector('.minus')
-const totalAmount = document.querySelector('#amount')
 const totalOrderPrice = document.querySelector ('.order_cost p span')
-totalAmount.value = '1'
 const selPrice = document.querySelector('.sel_price')
 
 colorSelect.addEventListener('change', ()=>{
@@ -211,3 +207,79 @@ closeList.addEventListener('click', ()=> {
     sizeSel.selectedIndex = 0
     sizeSel.disabled= true
 })
+
+// 9) 주문목록 클릭 시 재고 수량까지 주문수량 + 주문금액 표시
+// 1. + 버튼을 눌렀을 때
+// 2. 주문 수량이 1씩 상승해야 하나
+// 3. 주문 수량이 stock 수량을 초과해서는 안된다.
+const addBtn = document.querySelector('.plus')
+const minusBtn = document.querySelector('.minus')
+const totalAmount = document.querySelector('#amount')
+let num = 1
+totalAmount.value = num
+/* const totalOrderPrice = document.querySelector ('.order_cost p span') / 총 주문 가격
+const selPrice = document.querySelector('.sel_price') */ //현재 선택 항목 수량 가격
+addBtn.addEventListener('click', () => {
+    if (num < productOptDB[0].stock){
+    num++;
+    minusPlusFunc()
+    } else {
+        alert (`현재 재고 수량은 ${productOptDB[0].stock}개 입니다. 주문 수량은 재고 수량을 초과할 수 없습니다.`)
+    }})
+
+// 10) 주문목록 - 클릭 시 주문수량 + 주문금액 감소 (수량이 1이라면 경고창 출력.)
+
+minusBtn.addEventListener('click', () => {
+    if (num > 0){
+    num--
+    minusPlusFunc()
+} else {
+    alert(`최소 주문 수량은 1개 입니다.`)
+    }})
+
+function minusPlusFunc() {
+    totalAmount.value = num
+    let total = num * productOptDB[0].price
+    totalOrderPrice.textContent = total.toLocaleString('ko-kr')
+    selPrice.textContent = total.toLocaleString('ko-kr')
+}
+
+// 1. - 버튼을 눌렀을 때
+// 2. 주문 수량이 1씩 감소하나
+// 3. 주문 수량이 1보다 작아지면 안되며
+// 4. 0이 되면 경고 메세지가 출력되며
+// 5. 다시 1로 돌아간다.
+
+
+// 11) (상품 미 선택시) 장바구니, 바로구매 클릭 시 '상품 선택하세요' 경고창 출력
+const cartBtn = document.querySelector('#cart_btn')
+const buyBtn = document.querySelector('#buy_btn')
+
+console.log(cartBtn, buyBtn)
+
+cartBtn.addEventListener('click', ()=> {
+    cartBuyFunc('./cart.html')
+})
+
+buyBtn.addEventListener('click', ()=> {
+    cartBuyFunc('./buy.html')
+})
+
+function cartBuyFunc (url) {
+    if(colorSelect.selectedIndex == 0 || sizeSel.selectedIndex == 0){
+        alert('상품을 선택하지 않았습니다. 상품을 선택해 주세요.')
+    } else {loginStatus=localStorage.getItem('isLogin')
+            if(loginStatus == 'true'){
+            buyBtn.onclick.textContent = `"location.href=${url}"`
+        } else {buyBtn.onclick.textContent="location.href='./login.html'"}
+}}
+
+// 12) (상품 선택 시) 장바구니, 바로구매 클릭 시 로그인 유무에 따라 다른 페이지 이동
+
+/* bookMark.addEventListener('click', () => {
+    //북마크 클릭시 -> 로그인 상태 가져옴
+    localStorage.getItem('isLogin')
+    if (loginStatus == 'false') else {
+        bookMark.href = "./login.html"
+    }
+}) */

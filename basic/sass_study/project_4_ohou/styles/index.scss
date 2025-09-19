@@ -275,14 +275,13 @@
                                 height: 30px;
                                 text-align: center;
                                 }
+                        }p{
+                            .sel_price {
+                                font-size: $sel-size-14;
+                            }
                         }
-                        }
-                        .sel_price {
-                            font-size: $sel-size-14;
-                            position: absolute;
-                            right: 15px;
-                            bottom: 15px;
-                        }
+                        
+                    }   
                     }}
                     .order_cost {
                         @include flex-rows;
@@ -309,11 +308,11 @@
                         #cart_btn {
                             background-color: $color-white ;
                             border : 1px solid $color-point;
-                            color: $color-point;
+                            color: $color-point; text-align: center;
                         }
                         #buy_btn {
                             background-color: $color-point ;
-                            color: $color-white;
+                            color: $color-white; text-align: center;
                         }
                     }
                 }

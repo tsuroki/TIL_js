@@ -1,0 +1,49 @@
+@use './common.scss' as *;
+
+#wrap{
+    margin: 0 225px;
+    .path {
+        padding: 20px 0;
+        @include flex-row-center;
+        justify-content : flex-start;
+        font-size: $additionaldesc-text-14px;
+        svg {margin-right: 10px;}
+        a {
+            margin-right: 10px;
+            &:last-child {margin-right: 0;}
+        }
+    }
+    .container {
+        .left{
+            width: max-content;
+            height: 678px;
+            .thumb_bar{
+                width : 84px;
+                @include flex-col-center;
+                height: 100%;
+                .up{
+                    margin-bottom: 10px;
+                }
+                .container{
+                    height : 610px;
+                    overflow: hidden;
+                .small_img {
+                    @include flex-col-center;
+                    a {
+                        width : 84px;
+                        height: 84px;
+                        margin-bottom: 10px;
+                        img{width: 100%;}
+                        }
+                    }
+                }
+                .down {
+                    margin-top: 10px;
+                }
+            }     
+        .big_img {}
+        .pic_nav {}
+        }
+    }
+    .right{}
+}

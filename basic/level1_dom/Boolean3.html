@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="./style/reset.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- 폰트 -->
+    <title>조건문과 반복문</title>
+    <script src="./script/Boolean3.js" defer></script>
+    <style>
+        #map {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 800px;
+            height: 800px;
+            margin: 20px auto;
+            border-radius: 20px;
+            background:rgba(0,0,0,0.1) ;
+        }
+        #center{
+            text-align: center;
+        }
+        #txt {padding: 10px;}
+        .btn{
+            width: 20px;
+            height: 30px;
+            line-height: 30px;
+            padding: 30px 30px;
+        }
+        .orderlist{
+            padding : 10px;
+            background: rgba(0,0,0,0.1);
+            width: 200px;
+            height: 100px;
+        }
+        section .orderlist button {
+            background-color: #aaa;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- false, falsy / true, truthy -->
+    <!-- <h1>참과 거짓</h1>
+    <h2>거짓 값</h2>
+    <p>false, null, undefined, NaN, 0, 빈 문자열</p>
+    <h2>참 값</h2>
+    <p>거짓을 제외한 모든 값</p>
+    <p>빈 배열, 빈 객체는 true / [], {}</p> -->
+    <!-- -->
+    <!-- <h2> if 조건문</h2>
+    <p>if를 기점으로 분기를 나눈다</p>
+    <p>if -> 참일 경우 {}, else -> 거짓일경우 {}</p>
+    <p>if (조건){조건 = 참일 경우 함수} else {조건 = 거짓일 경우 함수}</p>
+    
+    <h2>if~else if~else</h2>
+    <p>if(){}else if(){}else{}</p>
+    <p>if부터 시작하여 조건값에서 거짓일 경우 else if로 넘어가고, 그 마저도 거짓이라면<br>
+    else로 넘어가 함수를 시행한다.</p>  -->
+    <section>
+        <button type="button" id="minus">-</button>
+        <button type="button" id="plus">+</button>
+        <input type="number" name="num" id="num">
+        <p class="price">2000원</p>
+        <div class="orderlist">
+            <h2>제품명</h2>
+            <h2>갯수 : <em>0</em>개</h2>
+            <h2>총 가격 : <span>0</span>원</h2>
+            <button type="button">주문</button>
+            <button type="button">장바구니</button>
+        </div>
+    </section>
+    <div id="map">
+        <img src="./images/animation_move.gif" alt="#">
+    </div>
+    <div id="control">
+        <input type="text" name="txt" id="txt" placeholder="이동 방향을 입력하세요">
+        <button type="button" class="btn top">▲</button>
+        <button type="button" class="btn right">▶</button>
+        <button type="button" class="btn down">▼</button>
+        <button type="button" class="btn left">◀</button>
+    </div>
+</body>
+</html>

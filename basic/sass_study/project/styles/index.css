@@ -12,9 +12,4 @@
   flex-flow: column nowrap;
   justify-content: space-between;
   align-items: center;
-}
-@media screen and (max-width: 1200px) {
-  #tab_container {
-    background-color: #eee;
-  }
-}/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=index.css.map */

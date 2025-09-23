@@ -40,6 +40,4 @@ main > div.box > span > em {
 main > div.box > span:nth-child(3) {
   border: 5px solid blue;
   background-color: #f00;
-}
-
-/*# sourceMappingURL=style1.css.map */
+}/*# sourceMappingURL=style1.css.map */

@@ -1,0 +1,80 @@
+body{
+    background-image: url(https://images.unsplash.com/photo-1615280825886-fa817c0a06cc?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    #wrap{
+        padding : 150px 0;
+        .birthday-form {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            width: 600px;
+            height: 600px;
+            padding : 30px 30px;
+            background-color: rgba(255,120,255, 0.3);
+            border-radius: 20px;
+            box-shadow: 4px 4px 8px rgba(0,0,0,0.1);
+            .title {
+                text-align: center;
+                font-size: 2.5rem;
+                font-weight: 600;
+                line-height: 1.5;
+                margin-bottom: 30px;
+            }
+            #month-date {
+            margin-bottom: 30px;
+                #month-wrap {
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: center;
+                align-items: center;
+                    .label-month {
+                        font-size: 1.25rem;
+                        margin-bottom: 10px;
+                        font-weight: 600;
+                    } //label
+                    #birthday-month {
+                        margin-bottom: 20px;
+                    } //input
+                }
+                #date-wrap {
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: center;
+                align-items: center;
+                    .label-date {
+                        font-size: 1.25rem;
+                        margin-bottom: 10px;
+                        font-weight: 600;
+                    } //label
+                    #birthday-date {} //input
+                }
+            div {
+                .date{width: 100px; height: 40px; text-align: center;
+                border: 1px solid #e9e9e9;
+                border-radius: 8px;} //공통 클래스
+            }
+        }
+        .notice {
+            text-align: center;
+            margin-bottom: 20px;
+            background-color: #FEF3E2;
+            width : 300px;
+            height: max-content;
+            line-height: 30px;
+            border-radius: 5px;
+        }
+        .submit-btn {
+            padding : 20px 30px;
+            border: 1px solid #dddddd;
+            border-radius: 8px;
+
+        }
+    }
+}
+}

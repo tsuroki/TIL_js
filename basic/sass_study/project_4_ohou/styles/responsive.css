@@ -1,0 +1,8 @@
+@media screen and (max-width: 1156px) {
+  #wrap #main_product .container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+}/*# sourceMappingURL=responsive.css.map */

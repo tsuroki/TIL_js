@@ -1,4 +1,7 @@
 /* common.scss */
+#wrap {
+  /* main */
+}
 #wrap header {
   height: 52px;
   padding: 0 80px;
@@ -29,14 +32,12 @@
   border: 1px solid #000;
   padding: 10px;
 }
-#wrap {
-  /* main */
-}
 #wrap #main_product {
   max-width: 1200px;
   min-width: 320px;
   margin: 0 auto;
   /* path--------------------------------------------------- */
+  /* image---------------------------------------------------- */
 }
 #wrap #main_product .path {
   padding: 12px 15px;
@@ -49,14 +50,12 @@
   font-size: 0.875rem;
   color: #aaaaaa;
 }
-#wrap #main_product {
-  /* image---------------------------------------------------- */
-}
 #wrap #main_product .container {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: flex-start;
+  width: -moz-fit-content;
   width: fit-content;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -94,6 +93,8 @@
 }
 #wrap #main_product .container .right {
   padding: 0 30px;
+  /* price ---------------------------------------------- */
+  /* benefit -------------------------------------------------------- */
 }
 #wrap #main_product .container .right .content .brand {
   margin: 0 0 30px;
@@ -152,9 +153,6 @@
 #wrap #main_product .container .right #review .score .review_total {
   font-size: 0.8125rem;
 }
-#wrap #main_product .container .right {
-  /* price ---------------------------------------------- */
-}
 #wrap #main_product .container .right .price_wrap .original_price {
   margin: 0 0 10px;
 }
@@ -200,9 +198,6 @@
   left: 132px;
   z-index: 20;
 }
-#wrap #main_product .container .right {
-  /* benefit -------------------------------------------------------- */
-}
 #wrap #main_product .container .right .benefit_ship {
   display: grid;
   grid-template-rows: 30px 30px 30px 30px 30px 1fr;
@@ -211,6 +206,7 @@
 }
 #wrap #main_product .container .right .benefit_ship dt {
   margin-top: 10px;
+  width: -moz-fit-content;
   width: fit-content;
 }
 #wrap #main_product .container .right .benefit_ship dt:nth-of-type(1) {
@@ -243,6 +239,7 @@
 }
 #wrap #main_product .container .right .benefit_ship dd:nth-of-type(6) {
   grid-area: cont6;
+  width: -moz-fit-content;
   width: fit-content;
   background-color: #aaaaaa;
   padding: 10px 20px;
@@ -307,11 +304,8 @@
   height: 30px;
   text-align: center;
 }
-#wrap #main_product .container .right .frm_right .sel_price {
+#wrap #main_product .container .right .frm_right .order_list p .sel_price {
   font-size: 0.875rem;
-  position: absolute;
-  right: 15px;
-  bottom: 15px;
 }
 #wrap #main_product .container .order_cost {
   display: flex;
@@ -347,10 +341,12 @@
   background-color: #fff;
   border: 1px solid #59afff;
   color: #59afff;
+  text-align: center;
 }
 #wrap #main_product .container .btn #buy_btn {
   background-color: #59afff;
   color: #fff;
+  text-align: center;
 }
 
 @media screen and (max-width: 1156px) {
@@ -360,6 +356,4 @@
     justify-content: center;
     align-items: center;
   }
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

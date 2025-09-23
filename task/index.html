@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="당신의 탄생화와 그 의미를 알아보세요!">
+    <meta name="keywords" content="탄생화, 꽃, 생일, 운세">
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/flower.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" />
+    <title>당신의 탄생화는?</title>
+    <script src="./script/flower.js" defer></script>
+    <script src="./script/flower_date.js" defer></script>
+</head>
+<body>
+    <div id="wrap">
+        <section class="birthday-form">
+            <h1 class="title">당신의 생일 그 뜻 깊은 탄생화</h1>
+            <div id="month-date">
+                <div id="month-wrap">
+                    <label for="birthday-month" class="label-month">MONTH</label>
+                    <input type="number" id="birthday-month" name="birthday-month" class="date">
+                </div>
+                <div id="date-wrap">
+                    <label for="birthday-date" class="label-date">DATE</label>
+                    <input type="number" id="birthday-date" name="birthday-date" class="date">
+                </div>
+            </div>
+            <p class="notice">월과 일을 입력해주세요!</p>
+            <button type="submit" class="submit-btn">확인해보기</button>
+        </section>
+    </div>
+</body>
+</html>

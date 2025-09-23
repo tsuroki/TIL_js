@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="./styles/main.css">
         <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
         <title>Document</title>
-        <script src="./script/index.js"></script>
+        <script src="./script/index.js" defer></script>
     </head>
     <body>
         <header>
@@ -81,7 +81,7 @@
                                 <img src="./images/down.png" alt="">                              
                             </button>
                             <div class="imgcontainer">
-                                <div class="small_img">
+                                <div class="smallimg">
                                     <a href="#" class="active"><img src="./images/Product_img/img1.jpg" alt=""></a>
                                     <a href="#"><img src="./images/Product_img/img2.jpg" alt=""></a>
                                     <a href="#"><img src="./images/Product_img/img3.jpg" alt=""></a>
@@ -181,7 +181,7 @@
                         </div>
                         <div class="delivery">
                             <h2>배송비</h2>
-                            <span>3,000원 (50,000원 이상 구매 시 무료)</span>
+                            <span id="delcost">3,000원 (50,000원 이상 구매 시 무료)</span>
                         </div>
                         <div class="order_list">
                             <h2 class="order_title">[예약판매, 9/22~ 순차출고 / Welcome 전용] 젬 소노 테라피 릴리프 + 가볍게 마시는 히알루론산</h2>

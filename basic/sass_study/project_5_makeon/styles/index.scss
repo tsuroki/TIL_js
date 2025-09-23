@@ -34,7 +34,7 @@
                 .imgcontainer{
                     height : 610px;
                     overflow: hidden;
-                .small_img {
+                .smallimg {
                     @include flex-col-spacebet;
                     .active {
                         border: 1px solid $color-111;
@@ -58,11 +58,14 @@
             }
             .display_img{
                 position: relative;
+                width: 508px;
+                height: 678px;
+                overflow: hidden;
+                border-radius: 10px;
                 .big_img {
-                    width: 508px;
-                    height: 678px;
+                    @include flex-row-center;
+                    width: calc(508px*10);
                     border-radius: 10px;
-                    overflow: hidden;
                     img {
                         width: 508px;
                         height: 678px;
@@ -179,11 +182,16 @@
             margin-bottom: 30px;
             border-top: 1px solid #E5E5E5 ;
             border-bottom: 1px solid #E5E5E5 ;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-start;
+            align-items: center;
             h2 {
                 font-size: $additionaldesc-text-14px;
-                font-weight: $font-SemiBold;
+                font-weight: $font-Bold;
+                margin-right: 6px;
             }
-            span {
+            #delcost {
                 font-size: $additionaldesc-text-14px;
                 font-weight: $font-medium;
             }

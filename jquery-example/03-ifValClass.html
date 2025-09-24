@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>03 쿠폰 할인 적용 예제</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="./styles/reset.css">
+  <style>
+    .message {font-size: 1.2rem;margin-top: 10px;}
+    /* 할인 적용 성공 메시지 스타일 */
+
+    /* 오류 메시지 스타일 */
+
+  </style>
+</head>
+<body>
+  <h1>결제 금액 할인 적용</h1>
+  <!-- 현재 결제 금액 표시 -->
+  <p>현재 결제 금액: <span id="currentPrice">32000</span>원</p>
+  
+  <!-- 쿠폰 입력 및 적용 버튼 -->
+  <div class="result">
+    <input type="text" id="couponInput" placeholder="쿠폰 코드를 입력하세요">
+    <button type="button" id="applyCoupon">쿠폰 적용</button>
+  </div>
+  
+  <!-- 결과 메시지 영역 -->
+  <div id="discountMessage" class="message"></div>
+  <div id="totalPrice" class="message"></div>
+
+  <script>
+    //변수 설정
+    const $inputValue = $('#couponInput')
+    const $SubBtn = $('#applyCoupon')
+    const $Msgdiscount = $('#discountMessage')
+    const $Msgtotal = $('#totalPrice')
+    let Price = 32000
+
+    //이벤트 설정
+    $SubBtn.click(function (){
+      console.log($SubBtn)
+      if($inputValue.val() === ''){
+        $Msgdiscount.text('쿠폰 코드를 입력하세요.')
+        $Msgdiscount.css('color','red')
+        $Msgtotal.text (`최종 결제금액 ${Price}원`)
+        $Msgtotal.css (`font-weight`,'600')
+      } else if($inputValue.val() === 'DISCOUNT10'){
+        $Msgdiscount.text('10%쿠폰이 적용되었습니다!')
+        $Msgdiscount.css('color','green')
+        $Msgdiscount.css('font-weight','600')
+        $Msgdiscount.css('font-size','2rem')
+        $Msgtotal.text (`최종 결제금액 ${Price-(Price*0.1)}원`)
+        $Msgtotal.css ('color','green')
+        $Msgtotal.css ('font-weight','600')
+        $Msgtotal.css ('font-size','2rem')
+      } else{
+        $Msgdiscount.text('존재하지 않는 쿠폰 코드입니다. 코드를 다시 확인해주세요')
+        $Msgtotal.text (`최종 결제금액 ${Price}원`)
+      }
+    })
+
+
+
+  </script>
+</body>
+</html>

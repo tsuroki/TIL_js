@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <!-- jquery CDN 필수연결 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    
+    <header>
+        <nav id = "gnb">
+            <a href="#">menu1</a>
+            <a href="#">menu2</a>
+            <a href="#" class="active">menu3</a>
+            <a href="#">menu4</a>
+        </nav>
+        <script>
+            //제이쿼리
+            const $gnb = $('#gnb');
+            const $gnbA = $('#gnb > a');
+            const $aActive = $('#gnb > .active');
+            console.log($gnb)
+            console.log($gnbA)
+            console.log($aActive)
+            /* $gnb.style.backgroundColor= "Yellow" */
+            $gnb.css('background-color', 'Yellow');
+            //제이쿼리 변수.css('속성', '값').css('속성','값')
+            $gnbA.css({
+                backgroundColor : 'pink',
+                color: 'red',
+            })
+        </script>
+    </header>
+</body>
+</html>

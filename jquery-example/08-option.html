@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>option test</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
     <link rel="stylesheet" href="./styles/reset.css">
     <style>
         .box {width:500px; text-align:right;}
@@ -15,12 +16,16 @@
         .box .select {border-top:1px dotted #222; margin-top:10px;}
         .box .close {margin-left:30px;}
     </style>
+    <script>
+
+    </script>
 </head>
 <body>
     <div class="box">
         <img src="https://i.pinimg.com/736x/d3/0d/9a/d30d9ac1be823fd6474a6df31e0c591a.jpg" alt="">
         <p class="price">2,500,000원</p>
         <select name="color" id="color">
+            <option value="none">선택</option>
             <option value="red">red</option>
             <option value="blue">blue</option>
             <option value="yellow">yellow</option>
@@ -29,6 +34,43 @@
     </div>
     <script>
         
+        
+        // 3. 선택 옵션 목록 출력하기
+        // 4. 선택 옵션 오른쪽 X 클릭 시 선택 옵션 제거
+
+        // 내가 색상 선택에서 색상 선택시
+        // 선택옵션이 나타나고
+        // 선택 옵션에 내가 어떤 색을 골랐는지 나오며
+        // X키를 누르면 선택옵션이 제거된다.
+
+        
+        const $SelectOpt = $('select#color')
+        const $SelectOrder = $('.select')
+        const $Close = $('.close')
+        const $span = $('.select span')
+
+        console.log($SelectOpt, $SelectOrder, $Close, $span)
+        // 1. 선택 옵션 초기 숨기기
+        $SelectOrder.hide()
+        
+        // 2/ select 옵션 선택시 -> select 등 하위 자식을 선택했을 때는 select나 click이 아닌 change를 사용한다.
+        $SelectOpt.change(function(){
+            //$selectOpt의 옵션을 선택하여 변경하였을 때, console이 작동하는지 체크
+            // 여기서 그저 $(this).find('option') 이라고 작성하면
+            // ce {0: option, 1: option, 2: option, length: 3, prevObject: ce} 라고 index를 {} 안에 배열처럼 보여준다.
+            // 그래서 선택한 Option의 값을 출력하기위해 val()을 작성하면 맨 처음 값인 red만 출력된다. red가 Option중 맨 처음 보여지는 값이라서 그런건지 아니면 red가 Option중 첫째 자식이라 그런건지 잘 모르겠지만.
+
+            //그렇기 때문에 '선택한 항목'이라는 뜻의 :checked를 붙여
+            // .find(option:checked) 라고 작성한다.
+            console.log($(this).find('option:checked').val())
+            $SelectOrder.slideDown(500)
+            let thisval=$(this).find('option:checked').val()
+            $span.text(thisval)
+        })
+        $Close.click(function(){
+            $(this).parent().slideUp(500)
+        })
+
     </script>
 </body>
 </html>

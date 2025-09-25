@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/reset.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Document</title>
+    <script src="./script/adDB.js" defer></script>
+    <script src="./script/math.js" defer></script>
+</head>
+<body>
+    <section class="min-sort" style="margin-bottom: 100px;">
+        <button type="button" id="min-price-btn">최저가 찾기</button>
+        <p class="minprice">최저가가 여기 표시됩니다.</p>
+        <hr style="padding: 50px 0; margin-bottom: 50px; border-bottom: 1px solid #000;">
+        <h2>쇼핑몰별 최고가</h2>
+        <ul class="highlist"></ul>
+        <button type="button" id="sorthigher">최고가 정렬</button>
+        <hr style="padding-top: 50px; margin-bottom: 50px; border-bottom: 1px solid #000;">
+    </section>
+
+    <!-- ================ -->
+
+    <section class="min2" style="margin-bottom: 100px; padding-bottom: 50px">
+        <button type="button" id="lowest">최저가 찾기</button>
+        <button type="button" id="delivery">배송비 무료 찾기</button>
+        <p class="result1"><!-- 최저가 표시란 --></p>
+        <hr style="border-bottom: 1px solid #000; padding : 50px;">
+        <p class="result2" style="margin-bottom: 50px;"><!-- 배송비 표시란 --></p>
+        
+        <!-- =============== -->
+
+        <h2>쇼핑몰 별 최저가</h2>
+        <ul id="shoplist"></ul>
+
+        <!-- =============== -->
+
+        <hr style="border-bottom: 1px solid #000;padding-top: 50px;">
+    </section>
+
+    <!-- ================ -->
+     
+    <section class="calc" style="margin-bottom: 50px;">
+        <p>총 금액 : <input type="number" id="cost"></p>
+        <p>인원 수 : <input type="number" id="person"></p>
+        <button type="button" id="calc">계산하기</button>
+        <p class="result">1명 당 낼 금액 : <em>0</em>원</p>
+        <p>으-딜 꽁으로 쳐먹을라고</p>
+    </section>
+    <section class="ad">
+        <a href="#"><img src="#" alt="ㅇㅇ"></a>
+    </section>
+    <button type="button" id="coupon"> 할인 쿠폰 뽑기 </button>
+</body>
+</html>

@@ -929,3 +929,40 @@ ex) for(const 반복변수 in 배열 또는 객체){
 ex) for (let 변수 of 객체){
     반복문장
 }
+
+## for Each
+각각배열의 obj, index, array 등 정보를 열람.
+배열변수명.forEach(function//함수선언(obj, ind, arr){
+    함수 식
+})
+ex) const color = ['white', 'black', 'gray']
+color.forEach(function(value, index, array){
+    console.log(value, index, array)
+})
+---
+
+# Math
+* javascript 내장 객체로 수학 상수나 함수를 제공한다.
+ex) 무작위 수가 필요한 프로그램이나 반올림이 필요한 프로그램
+ex) 수학연산
+ex) 랜덤 할인 쿠폰 등
+console.log(Math);
+console.log(Math.PI)
+
+## 자주쓰는 Math 내장함수 메소드
+1. Math.floor() : 소수점 이하를 버리고 정수를 만든다. -> 소수점을 버려서 완벽히 평평한 정수로 만든다
+2. Math.round() : 소수점 이하를 반올림하여 정수를 만든다 -> 근사 정수 값
+3. Math.random() : 0과 1사이 무작위 숫자 반환. / 랜덤 숫자 생성, 게임 개발 or 다른 Math 메소드와 조합한다
+    ex) Math.floor(Math.rondom() * n)
+4. Math.max() : 여러 숫자 중 가장 큰 값 찾기
+5. Math.min() : 여러 숫자 중 가장 작은 값 찾기
+ex) 쇼핑몰 최저가, 최고가 찾기 / 게임 최고점수,최저점수 / 월별 최고, 최저 매출
+
+---
+
+# Map 함수
+
+* 배열의 각 요소를 변형시켜 새로운 배열을 반환
+* 기존배열은 변경하지 않고 새로운 배열만 생성
+-> 배열 관리에 뛰어남
+* for에 비해 간결한 코드

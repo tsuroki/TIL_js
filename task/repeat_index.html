@@ -6,30 +6,33 @@
     <meta name="description" content="당신의 탄생화와 그 의미를 알아보세요!">
     <meta name="keywords" content="탄생화, 꽃, 생일, 운세">
     <link rel="stylesheet" href="./styles/reset.css">
-    <link rel="stylesheet" href="./styles/flower.css">
+    <link rel="stylesheet" href="./styles/repeat.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" />
     <title>탄생화와 꽃말 찾기</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./script/flower_date.js"></script>
-    <script src="./script/flower.js" defer></script>
+    <!-- <script src="./script/flower_repeat.js" defer></script> -->
+    <script src="./script/flower_repeat2.js" defer></script>
 </head>
 <body>
-    <div id="wrap">
-        <section class="birthday-form">
-            <h1 class="title">당신의 생일 그 뜻 깊은 탄생화</h1>
-            <div id="month-date">
-                <div id="month-wrap">
-                    <label for="birthday-month" class="label-month">MONTH</label>
-                    <input type="number" id="birthday-month" name="birthday-month" class="date">
-                </div>
-                <div id="date-wrap">
-                    <label for="birthday-date" class="label-date">DATE</label>
-                    <input type="number" id="birthday-date" name="birthday-date" class="date">
-                </div>
+    <main>
+        <h1>나의 생명과 함께 피어난 탄생화는...</h1>
+        <h2>나의<em>탄생화</em>찾기</h2>
+        <form action="#" method="get" id="birthfrm">
+            <div class="input">
+                <input type="number" id="year" name="year">
+                <input type="number" id="month" name="year">
+                <input type="number" id="day" name="year">
             </div>
-            <p class="notice">월과 일을 입력해주세요!</p>
-            <button type="submit" class="submit-btn">확인해보기</button>
-        </section>
-    </div>
+            <div id="result-birth">
+                <h2 class="flower-result">당신의 탄생화는 '<em></em>' 입니다.</h2>
+                <p class="flower-word">꽃말:<span></span></p>
+            </div>
+            <button type="button" id="result">나의 꽃과 꽃말 만나기</button>
+            <button type="button" id="share">나의 꽃과 꽃말 공유하기</button>
+        </form>
+        <div class="flower"><img src="https://i.pinimg.com/736x/7d/7f/d2/7d7fd266be0238ff3050721ac6ff50af.jpg" alt=""></div>
+    </main>
 </body>
 </html>

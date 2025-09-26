@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <title>Document</title>
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <style>
+        html {padding: 0px;}
+        body {padding : 0px;}
+        header{position: fixed;
+        width : 100%; height : 80px; background: blue; z-index: 100;}
+        #wrap {
+            z-index: 90; 
+            width: 100%;
+            height: 100vh;
+            padding-top: 80px;
+            margin : 0px;
+        }
+        #wrap .swiper-wrapper {}
+        #wrap .swiper-wrapper .swiper-slide {}
+        #wrap .swiper-wrapper .ad {background-color: antiquewhite;}
+        #wrap .swiper-wrapper .ad #ad-wrap {
+            position: relative;
+            width: 1000px;
+            height: 400px;
+            background-color: aqua;
+            transform: translateY(50%); 
+        }
+        #wrap .swiper-wrapper .ad #ad-wrap .ad-container {
+
+        }
+        #wrap .swiper-wrapper .ad #ad-wrap .ad-container > .swiper-slide {font-weight: 600; font-size: 3rem; text-align: center; color: white; background-size: cover;background-position: center;}
+        #wrap .swiper-wrapper .ad #ad-wrap .ad-container .ad1 {
+            background: url(https://i.pinimg.com/1200x/1c/e9/ff/1ce9ffe68a9747fa612c0c1d9bab4a56.jpg) rgba(255,0,0,0.2);
+        }
+        #wrap .swiper-wrapper .ad #ad-wrap .ad-container .ad2 {
+            background: url(https://i.pinimg.com/1200x/42/88/15/428815264b613a9d1af1c77a3489b959.jpg);
+        }
+        #wrap .swiper-wrapper .ad #ad-wrap .ad-container .ad3 {
+            background: url(https://i.pinimg.com/1200x/ce/61/ea/ce61eadb3d7d86f6c23180227a3e32b6.jpg);
+        }
+        
+         /* ======================================================= */
+
+        #wrap .swiper-wrapper .best {background-color: burlywood; text-align: center;}
+        #wrap .swiper-wrapper .best .products {background-color: coral; justify-content: center; align-content: center;}
+        #wrap .swiper-wrapper .best .products {display: flex; gap: 20px;}
+        #wrap .swiper-wrapper .best .products li {position: relative;}
+        #wrap .swiper-wrapper .best .products li .swiper-button-prev {color: #ff00ff ; left: 50px;}
+        #wrap .swiper-wrapper .best .products li .swiper-button-next {color: #ff00ff ; right: 50px;}
+        #wrap .swiper-wrapper .best .products li a {}
+        #wrap .swiper-wrapper .best .products li a div[id^=product] {width: 400px; height: 300px;}
+        #wrap .swiper-wrapper .best .products li a div[id^=product] > .swiper-wrapper {}
+        #wrap .swiper-wrapper .best .products li a div[id^=product] > .swiper-wrapper > .swiper-slide {}
+        #wrap .swiper-wrapper .best .products li a div[id^=product] > .swiper-wrapper > .swiper-slide img
+        {position: absolute; left: 50%; top : 50%; transform: translate(-50%, -50%); width : 100%}
+           /*   */
+
+
+        /* ======================================================== */
+
+        #wrap .swiper-wrapper .new {background-color: cornflowerblue;}
+        #wrap .swiper-wrapper .md {background-color:darkgoldenrod;}
+    </style>
+<body>
+    <header>header</header>
+    <div class="swiper" id="wrap">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide ad">
+                <h1>광고</h1>
+                <div class="swiper" id="ad-wrap"><!-- 1000*400 -->
+                    <div class="swiper-wrapper ad-container">
+                        <div class="swiper-slide ad1">1</div>
+                        <div class="swiper-slide ad2">2</div>
+                        <div class="swiper-slide ad3">3</div>
+                    </div>
+                    <div class="swiper-scrollbar"></div>
+                </div>
+            </div>
+            <div class="swiper-slide best"> <!-- 2개 -->
+                <h1>전체보기</h1>
+                <ul class="products">
+                    <li>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div> <!-- swiper-button은 absolute가 내장되어있다 -->
+                        <a href="#">
+                            <div class="swiper" id="product-eden"> <!-- 자식 자손 금지 -->
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide pic1">
+                                        <img src="./img/gentile_01.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide pic2">
+                                        <img src="./img/gentile_02.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide pic3">
+                                        <img src="./img/gentile_03.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <p>에덴 o2(br)</p>
+                        <p>₩330,000</p>
+                    </li> 
+                    <li>
+                        <a href="#">
+                            <div class="swiper" id="product-saga">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide pic4">
+                                        <img src="./img/gentile_04.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide pic5">
+                                        <img src="./img/gentile_05.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide pic6">
+                                        <img src="./img/gentile_06.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <p>에덴 o2(br)</p>
+                        <p>₩330,000</p>
+                    </li> 
+                </ul>
+            </div>
+            <div class="swiper-slide new">
+                <h1>신상품</h1>
+            </div>
+            <div class="swiper-slide md">
+                <h1>MD추천상품</h1>
+            </div>
+        </div>
+        <!-- swiper-slide 외에 다른 선택 옵션들은 자식, 자손 작성 금지 / 외부 웹js에 해당 class에 대한 자식, 자손js가 작성되어있기 때문이다. -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+    <script>
+        const pagewrap = new Swiper('#wrap', {
+            //옵션 : 값,
+            loop : false, // 끝에서 처음으로 자연스럽게 전환
+            direction : 'vertical',
+            mousewheel:true,
+            scrollbar : {
+                el : '#wrap .swiper-scrollbar', /* 부모 포함해서 작성할 것 */
+            },
+        })
+        const adwrap = new Swiper('#ad-wrap', {
+            //옵션 : 값,
+            loop : true, // 끝에서 처음으로 자연스럽게 전환
+            direction : 'vertical',
+            scrollbar : {
+                el: '#wrap > .swiper-wrapper > .ad > #ad-wrap > .ad-container'
+            }
+        })
+        const eden = new Swiper('#product-eden', {
+            //옵션 : 값,
+            loop : true, // 끝에서 처음으로 자연스럽게 전환
+            navigation : { // 이전 및 다음으로 넘어가는 버튼 지정 속성
+                nextEl : '.products li:nth-child(1) .swiper-button-next', /* 다음으로 넘어가는 요소 지정*/
+                prevEl : '.products li:nth-child(1) .swiper-button-prev', /* 이전으로 넘어가는 요소 지정 */
+            },
+        })
+        const saga = new Swiper('#product-saga', {
+            //옵션 : 값,
+            loop : true, // 끝에서 처음으로 자연스럽게 전환
+        })
+    </script>
+</body>
+</html>

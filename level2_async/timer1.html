@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko" style="padding: 0px;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" />
+    <title>타이머 함수</title>
+    <script src="./scripts/timer1.js" defer></script>
+    <style>
+        /* 1번 컨테이너 */
+        h1 {width: 200px;margin: 0 auto;}
+        h1 img {width: 100%;margin: 0 auto;}
+
+        .gentle_wrap {
+            position: relative; height: 600px; display: flex; gap: 40px;
+        }
+
+        .gentle_wrap .page_number {
+            position: absolute; left: 30px; top: 30px; z-index: 100;
+        }
+        .gentle_wrap .page_number .current {}
+        .gentle_wrap .page_number em {}
+        .gentle_wrap .page_number .total {}
+
+        .gentle_wrap {margin: 0 auto; width: 1200px; background: #f9f9f9;
+        display: flex; flex-flow: row nowrap; justify-content: center; align-items: center; gap: 20px;}  
+        .gentle_wrap .gentle_slide_container {width: 600px; position:relative; } 
+        .gentle_wrap .gentle_slide_container .slide {width: 100%; position: absolute; left: 0; top: 0; width: 100%;
+        opacity:0; visibility:hidden;}
+        .gentle_wrap .gentle_slide_container .slide1 {opacity:1; visibility:visible;} 
+        /* @keygrame -> animation 임시클래스 -> js classList.add() */
+        /* opacity 0 -> 1 기본동작 준비 후 -> transition */
+        .gentle_wrap .gentle_slide_container .slide img {width: 100%;} 
+
+        /* 2번 컨테이너 */
+        .gentle_wrap {margin: 0 auto; width: 1200px; background: #f9f9f9;} 
+        .gentle_wrap .gentle_slide_container2 {width: 600px; position:relative;} 
+        .gentle_wrap .gentle_slide_container2 .reslide {width: 100%; position: absolute; left: 0; top: 0; width: 100%; display:none;} 
+        .gentle_wrap .gentle_slide_container2 .slide66 {display: block;} 
+        .gentle_wrap .gentle_slide_container2 .reslide img {width: 100%;} 
+        
+        /* 애니메이션 테스트 */
+        .anitest {
+            opacity : 0;
+            animation: opacity_ani 1s both 3s;
+            /* animation : 키프레인애니메이션명 지속시간 종료방법 지연시간 */
+        }
+        .anitest .box {
+            width: 100px; height: 100px; background: coral;
+        }
+        @keyframes opacity_ani {
+            0%{opacity: 0; visibility: hidden;}
+            100% {opacity : 1; visibility: visible;}
+        }
+
+        /* visibiliy가 적용된다면 적용된 object의 경우에는 해당 공간을 차지하는 layout을 변동없이 차지할 수 있게 해주는 특성이다.*/
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">이미지 슬라이드</h1>
+    <h1 style="text-align: center;"><a href=""><img src="./img/logo.png" alt="#"></a></h1>
+    <!-- 전체틀 > 개별 슬라이드 묶음 + 버튼 or 슬라이드 > 개별 슬라이드*4 -->
+    <div class="gentle_wrap">
+        <div class="page_number">
+            <span class="current"></span>
+            <em>/</em>
+            <span class="total"></span>
+        </div>
+        <div class="gentle_slide_container">
+            <div class="slide slide1"><a href=""><img src="./img/gentile_01.jpg" alt=""></a></div>
+            <div class="slide slide2"><a href=""><img src="./img/gentile_02.jpg" alt=""></a></div>
+            <div class="slide slide3"><a href=""><img src="./img/gentile_03.jpg" alt=""></a></div>
+            <div class="slide slide4"><a href=""><img src="./img/gentile_04.jpg" alt=""></a></div>
+            <div class="slide slide5"><a href=""><img src="./img/gentile_05.jpg" alt=""></a></div>
+            <div class="slide slide6"><a href=""><img src="./img/gentile_06.jpg" alt=""></a></div>
+        </div>
+        <div class="gentle_slide_container2">
+            <div class="reslide slide66"><a href="#"><img src="./img/gentile_06.jpg" alt=""></a></div>
+            <div class="reslide slide55"><a href="#"><img src="./img/gentile_05.jpg" alt=""></a></div>
+            <div class="reslide slide44"><a href="#"><img src="./img/gentile_04.jpg" alt=""></a></div>
+            <div class="reslide slide33"><a href="#"><img src="./img/gentile_03.jpg" alt=""></a></div>
+            <div class="reslide slide22"><a href="#"><img src="./img/gentile_02.jpg" alt=""></a></div>
+            <div class="reslide slide11"><a href="#"><img src="./img/gentile_01.jpg" alt=""></a></div>
+        </div>
+    </div>
+    <div class="anitest">
+        <div class="box"></div>
+    </div>
+</body>
+</html>

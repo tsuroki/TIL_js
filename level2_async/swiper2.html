@@ -52,8 +52,8 @@
         #wrap .swiper-wrapper .best .products {background-color: coral; justify-content: center; align-content: center;}
         #wrap .swiper-wrapper .best .products {display: flex; gap: 20px;}
         #wrap .swiper-wrapper .best .products li {position: relative;}
-        #wrap .swiper-wrapper .best .products li .swiper-button-prev {color: #ff00ff ; left: 50px;}
-        #wrap .swiper-wrapper .best .products li .swiper-button-next {color: #ff00ff ; right: 50px;}
+        #wrap .swiper-wrapper .best .products li .swiper-button-prev {color: #ff00ff ; left : 0px; top: 30%; transform: translateX(50%); transform: translateY(50%); rotate: -90deg;}
+        #wrap .swiper-wrapper .best .products li .swiper-button-next {color: #ff00ff ; right : 0px;}
         #wrap .swiper-wrapper .best .products li a {}
         #wrap .swiper-wrapper .best .products li a div[id^=product] {width: 400px; height: 300px;}
         #wrap .swiper-wrapper .best .products li a div[id^=product] > .swiper-wrapper {}
@@ -160,8 +160,8 @@
             //옵션 : 값,
             loop : true, // 끝에서 처음으로 자연스럽게 전환
             navigation : { // 이전 및 다음으로 넘어가는 버튼 지정 속성
-                nextEl : '.products li:nth-child(1) .swiper-button-next', /* 다음으로 넘어가는 요소 지정*/
                 prevEl : '.products li:nth-child(1) .swiper-button-prev', /* 이전으로 넘어가는 요소 지정 */
+                nextEl : '.products li:nth-child(1) .swiper-button-next', /* 다음으로 넘어가는 요소 지정*/
             },
         })
         const saga = new Swiper('#product-saga', {

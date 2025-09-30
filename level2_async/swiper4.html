@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <title>Document</title>
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <style>
+        /* img slide practice */
+        #eventarea {position: relative; z-index: 300;}
+        
+
+        /* ========================= pagination ============================= */
+
+        #eventarea .zone { width: calc(1280px/2.3); height: 100%;  bottom : 0px;
+            left: 50%; transform: translateX(-50%); z-index: 100; /* border: 1px solid red; */
+            position: absolute; border: 1px solid red; /* 마우스 선택 비활성화 CSS */ pointer-events: none;
+            /* 마우스 포인터로 발생하는 이벤트를 사전에 방지하거나, 임의로 차단하기 위해 설정하는 css는 pointer-events 이다. */
+        }
+        
+        #eventarea .zone .swiper-pagination {
+            position: absolute; color: #fff; left: auto; right: 40px; top: auto; bottom : 20px ; width: max-content;
+            z-index: 999;
+        }
+        
+        #eventarea .zone .swiper-pagination::after {
+            position: absolute; content: ''; background: rgba(0, 0, 0, 0.5); display: block;
+            bottom : -8px; left: 50%; transform:translateX(-50%); z-index: -1; width: 60px; height: 30px;
+            border-radius: 15px;
+        }
+
+        #eventarea .zone .swiper-pagination .swiper-pagination-total{color: #fff;}
+        #eventarea .zone .swiper-pagination .swiper-pagination-current{color: #fff;}
+
+        #eventarea .swiper-button-prev,
+        #eventarea .swiper-button-next{
+            color: #000;; width: 40px; height: 40px; background: #fff;
+            border-radius: 20px; box-shadow: 0 0 8px rgba(0, 0, 0, 0.5); z-index: 999;}
+        #eventarea .swiper-button-prev{left :300px;}
+        #eventarea .swiper-button-prev svg {scale : 0.4; rotate:180deg; }
+        #eventarea .swiper-button-next{right :300px;}
+        #eventarea .swiper-button-next svg {scale:  0.4;}
+        /* =========================================================================================== */
+        #eventarea #event-banner {width: 1280px; margin: 50px auto; z-index: 100;}
+        #eventarea #event-banner > .swiper-wrapper {}
+        #eventarea #event-banner > .swiper-wrapper > .swiper-slide {opacity: 0.3; border-radius: 15px; overflow: hidden;}
+        #eventarea #event-banner > .swiper-wrapper > .swiper-slide-active { opacity: 1; border-radius: 15px; overflow: hidden; }
+        #eventarea #event-banner > .swiper-wrapper > .swiper-slide img {width: 100%;}
+        #eventarea #event-banner > .swiper-wrapper > .Ebnr1 {}
+        #eventarea #event-banner > .swiper-wrapper > .Ebnr2 {}
+        #eventarea #event-banner > .swiper-wrapper > .Ebnr3 {}
+        #eventarea #event-banner > .swiper-wrapper > .Ebnr4 {}
+        #eventarea #event-banner > .swiper-wrapper > .Ebnr5 {}
+        #eventarea #event-banner > .swiper-wrapper > .Ebnr6 {}
+        /* =========================================================================================== */
+        #s1 {}
+        #s1 #main-banner {width: 800px;}
+        #s1 #main-banner .swiper-wrapper {}
+        #s1 #main-banner .swiper-wrapper .swiper-slide {filter: grayscale(1); opacity: 0.5;}
+        #s1 #main-banner .swiper-wrapper .swiper-slide-active {filter: grayscale(0.2); opacity: 1;}
+        #s1 #main-banner .swiper-wrapper .swiper-slide img {width: 100%;}
+        #s1 #main-banner .swiper-wrapper .bnr1 {}
+        #s1 #main-banner .swiper-wrapper .bnr2 {}
+        #s1 #main-banner .swiper-wrapper .bnr3 {}
+        #s1 #main-banner .swiper-wrapper .bnr4 {}
+        #s1 #main-banner .swiper-wrapper .bnr5 {}
+        #s1 #main-banner .swiper-wrapper .bnr6 {}
+
+/* 반응형 swiper */
+        
+        #responsive {margin: 100px auto;}
+        #responsive #respon {width: 1200px; height: 150px;}
+        #responsive #respon .swiper-wrapper {}
+        #responsive #respon .swiper-wrapper .s1 {background-color: yellow;}
+        #responsive #respon .swiper-wrapper .s2 {background-color: coral;}
+        #responsive #respon .swiper-wrapper .s3 {background-color: lime ;}
+        #responsive #respon .swiper-wrapper .s4 {background-color: aqua;}
+
+/* 네이버 */
+
+        #naverwrap {
+            margin : 100px 0; max-width: 100%;
+            padding-bottom: 80px;
+        }
+        #naverwrap #naverbanner {margin : 0 auto; max-width: 1284px; min-width:320px;overflow: visible;}
+        #naverwrap #naverbanner >.swiper-wrapper {}
+        #naverwrap #naverbanner >.swiper-wrapper > .swiper-slide {border-radius: 10px; border-radius: 15px; overflow: hidden;
+            position: relative;
+        } 
+        #naverwrap #naverbanner >.swiper-wrapper > .swiper-slide .text {
+            position: absolute;
+            top: 50%; bottom: auto; left : 30px; right : auto;
+            transform: translatey(-50%);
+        } 
+        #naverwrap #naverbanner >.swiper-wrapper > .swiper-slide .text h2{
+            font-size:2.5rem; font-weight: 600; line-height: 1.5; color: #fff;
+        } 
+        #naverwrap #naverbanner >.swiper-wrapper > .swiper-slide .text p{
+            font-size: 1.25rem; color: #fff; line-height: 1.5; 
+        } 
+        #naverwrap #naverbanner >.swiper-wrapper > .swiper-slide img { width: 100%;}
+        #naverwrap #naverbanner >.swiper-wrapper .naver1 {
+        }
+        #naverwrap #naverbanner >.swiper-wrapper .naver2 {
+        }
+        #naverwrap #naverbanner >.swiper-wrapper .naver3 {
+        }
+        #naverwrap #naverbanner >.swiper-wrapper .naver4 {
+        }
+        #naverwrap #naverbanner >.swiper-wrapper .naver5 {
+        }
+        #naverwrap #naverbanner >.swiper-wrapper .naver6 {
+        }
+        #naverwrap #naverbanner >.swiper-wrapper .naver7 {
+        }
+        #naverwrap #naverbanner >.swiper-wrapper .naver8 {
+        }
+
+        #naverwrap .swiper-scrollbar{}
+        #naverwrap .buttonwrap {
+            margin: 0 auto;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            align-content: center;
+            position: relative;
+            max-width: 1264px;
+            transform: translateY(20px);
+        }
+        #naverwrap .buttonwrap .nextprevbtn {
+            position: absolute;
+            width: 72px; height: 32px;
+            right: 50px;
+            top: 6px;
+        }
+        #naverwrap .buttonwrap .nextprevbtn .swiper-button-prev,
+        #naverwrap .buttonwrap .nextprevbtn .swiper-button-next{}
+        #naverwrap .buttonwrap .nextprevbtn .swiper-button-prev{
+            width: 36px; height: 32px; background-color: #fff;
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+            border-top-left-radius: 16px ;
+            border-bottom-left-radius: 16px ;
+            left: 0;
+        }
+        #naverwrap .buttonwrap .nextprevbtn .swiper-button-next{
+            width: 36px; height: 32px; background-color: #fff;
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+            border-top-right-radius: 16px ;
+            border-bottom-right-radius: 16px ;
+            border-left: #ddd 1px solid;
+            right : 0;
+        }
+        #naverwrap .buttonwrap .nextprevbtn .swiper-button-prev svg{ scale : -0.5;}
+        #naverwrap .buttonwrap .nextprevbtn .swiper-button-next svg{ scale : 0.5; }
+        #naverwrap .buttonwrap .pause{
+            width: 32px; height: 32px; background-color: #fff;
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+            border-radius: 50% ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: 0;
+        }
+        #naverwrap .buttonwrap .pause img{width: 10px;} 
+        #naverwrap .swiper-scrollbar {
+            height: 3px;
+        } 
+        
+    </style>
+</head>
+<body>
+    <section id="eventarea">
+        <div class="swiper" id="event-banner">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide Ebnr1"><img src="./img/Eventbg/Event1.jpg" alt="#"></div>
+                <div class="swiper-slide Ebnr2"><img src="./img/Eventbg/Event2.jpg" alt="#"></div>
+                <div class="swiper-slide Ebnr3"><img src="./img/Eventbg/Event3.jpg" alt="#"></div>
+                <div class="swiper-slide Ebnr4"><img src="./img/Eventbg/Event4.jpg" alt="#"></div>
+                <div class="swiper-slide Ebnr5"><img src="./img/Eventbg/Event5.jpg" alt="#"></div>
+                <div class="swiper-slide Ebnr6"><img src="./img/Eventbg/Event6.jpg" alt="#"></div>
+            </div>
+        </div>
+        <div class="zone">
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="swiper-button-prev">
+            <svg width="9" height="13" viewBox="0 0 9 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.43911 6.47571L0.839111 1.87571L2.23911 0.475708L8.23911 6.47571L2.23911 12.4757L0.839111 11.0757L5.43911 6.47571Z" fill="#1C1B1F"/>
+            </svg>
+        </div>
+        <div class="swiper-button-next">
+            <svg width="9" height="13" viewBox="0 0 9 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.43911 6.47571L0.839111 1.87571L2.23911 0.475708L8.23911 6.47571L2.23911 12.4757L0.839111 11.0757L5.43911 6.47571Z" fill="#1C1B1F"/>
+            </svg>                
+        </div>
+    </section>
+    <!-- ======================================================= -->
+    <section id="s1">
+        <div class="swiper" id="main-banner">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide bnr1"><img src="./img/gentile_01.jpg" alt="#"></div>
+                <div class="swiper-slide bnr2"><img src="./img/gentile_02.jpg" alt="#"></div>
+                <div class="swiper-slide bnr3"><img src="./img/gentile_03.jpg" alt="#"></div>
+                <div class="swiper-slide bnr4"><img src="./img/gentile_04.jpg" alt="#"></div>
+                <div class="swiper-slide bnr5"><img src="./img/gentile_05.jpg" alt="#"></div>
+                <div class="swiper-slide bnr6"><img src="./img/gentile_06.jpg" alt="#"></div>
+            </div>
+        </div>
+    </section>
+    <!-- 반응형 Swiper -->
+    <section id="responsive">
+        <div class="swiper" id="respon">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide s1">1</div>
+                <div class="swiper-slide s2">2</div>
+                <div class="swiper-slide s3">3</div>
+                <div class="swiper-slide s4">4</div>
+            </div>
+        </div>
+    </section>
+    <!-- 네이버 스마트 스토어 -->
+    <section id="naverwrap">
+        <div class="swiper" id="naverbanner">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide naver1">
+                    <div class="text">
+                        <h2>특선물</h2>
+                        <p>추석 기념 선물 준비</p>
+                    </div>
+                    <img src="./img/naver/img1.png" alt="#">
+                </div>
+                <div class="swiper-slide naver2">
+                    <div class="text">
+                        <h2>특선물</h2>
+                        <p>추석 기념 선물 준비</p>
+                    </div>
+                    <img src="./img/naver/img2.png" alt="#">
+                </div>
+                <div class="swiper-slide naver3">
+                    <div class="text">
+                        <h2>특선물</h2>
+                        <p>추석 기념 선물 준비</p>
+                    </div>
+                    <img src="./img/naver/img3.png" alt="#">
+                </div>
+                <div class="swiper-slide naver4">
+                    <div class="text">
+                        <h2>특선물</h2>
+                        <p>추석 기념 선물 준비</p>
+                    </div>
+                    <img src="./img/naver/img4.png" alt="#">
+                </div>
+                <div class="swiper-slide naver5">
+                    <div class="text">
+                        <h2>맥스 클리닉</h2>
+                        <p>추석 기념 선물 준비</p>
+                    </div>
+                    <img src="./img/naver/img5.jpg" alt="#">
+                </div>
+                <div class="swiper-slide naver6">
+                    <div class="text">
+                        <h2>커스텀 멜로우</h2>
+                        <p>브랜드 데이 UP To 58%</p>
+                    </div>
+                    <img src="./img/naver/img6.jpg" alt="#">
+                </div>
+                <div class="swiper-slide naver7">
+                    <div class="text">
+                        <h2>린클 신상위크</h2>
+                        <p>미생물 음식물처리기 최초 40만 원대</p>
+                    </div>
+                    <img src="./img/naver/img7.jpg" alt="#">
+                </div>
+                <div class="swiper-slide naver8">
+                    <div class="text">
+                        <h2>오설록 브랜드데이</h2>
+                        <p>UP TO 45% 할인</p>
+                    </div>
+                    <img src="./img/naver/img8.jpg" alt="#">
+                </div>
+            </div>
+        </div>
+        <div class="buttonwrap">
+            <div class="nextprevbtn">
+                <div   div class="swiper-button-prev">
+                <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.29226 6.00001L0.692261 1.40001L1.40001 0.692261L6.70776 6.00001L1.40001 11.3078L0.692261 10.6L5.29226 6.00001Z" fill="#1C1B1F"/>
+                </svg>
+                </div> <!-- 36*32 -->
+                <div class="swiper-button-next">
+                    <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5.29226 6.00001L0.692261 1.40001L1.40001 0.692261L6.70776 6.00001L1.40001 11.3078L0.692261 10.6L5.29226 6.00001Z" fill="#1C1B1F"/>
+                    </svg>
+                </div>
+            </div>
+            <button type="button" id="stop" class="pause">
+                <img src="https://cdn-icons-png.flaticon.com/128/1214/1214679.png" alt="">
+            </button>
+        </div>
+        <div class="swiper-scrollbar"></div>
+        
+    </section>
+    <script>
+        /* 네이버 스마트 스토어 */
+        const NaverSlideBnr = new Swiper('#naverbanner', {
+            autoplay : {delay : 1000},
+            loop : true,
+            slidesPerView : 2,
+            initialSlide: 1, /* ? */
+            spaceBetween : 10,
+            centeredSlides : false,
+            scrollBar : {
+                el : '#naverwrap .swiper-scrollbar',
+                hide : true,
+            },
+            navigation : {
+                prevEl : '#naverwrap .buttonwrap .swiper-button-prev' ,
+                nextEl : '#naverwrap .buttonwrap .swiper-button-next' ,
+            }
+        })
+        const Stopbtn = document.querySelector('#stop')
+        let storeBoolean = true;
+        Stopbtn.addEventListener('click', () => {
+            storeBoolean = !storeBoolean;
+            console.log(storeBoolean)
+            storeBoolean ?
+                Stopbtn.children[0].src = 'https://cdn-icons-png.flaticon.com/128/151/151859.png' :
+                Stopbtn.children[0].src = 'https://cdn-icons-png.flaticon.com/128/5577/5577228.png'
+            /* swiper변수명.autoplay.stop() */
+            /* swiper변수명.autoplay.start() */
+            storeBoolean ? NaverSlideBnr.autoplay.start():NaverSlideBnr.autoplay.stop();
+        })
+        
+        /*===================*/
+        const EventBnrSlide = new Swiper('#event-banner', {
+            autoplay : {delay : 10000},
+            loop : true,
+            spaceBetween : 20,
+            centeredSlides : true,
+            slidesPerView : 2.2,
+            pagination : {
+                el : '#eventarea .zone .swiper-pagination',
+                type : 'fraction'
+            },
+            navigation : {
+                prevEl : '#eventarea .buttonwrap .swiper-button-prev',
+                nextEl : '#eventarea .buttonwrap .swiper-button-next',
+            },
+        })
+        const mainBnrSlide = new Swiper('#main-banner', {
+            autoplay : {delay : 10000},
+            loop : true,
+            spaceBetween : 10, /* gap */
+            centeredSlides : true,
+            slidesPerView : 2.2,
+        })
+
+        /* 반응형 swiper */
+        const resonBnr = new Swiper('#respon', {
+            slidesPerView : 1,/* 반응형 설정 값 (이하) */
+            breakpoints : { /* 반응형 설정 시작 (개수, 간격) */
+                640 : {
+                    slidesPerView : 2,
+                    spaceBetween : 10,
+                }
+                ,
+                1024 : {
+                    slidesPerView : 3,
+                    spaceBetween: 20,
+
+                }
+            }
+            
+        })
+    </script>
+</body>
+</html>

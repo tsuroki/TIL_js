@@ -1039,3 +1039,30 @@ window.addEventListner("scroll", ()=> {})
 * 사용자가 스크롤바를 드래그하거나, 키보드, 마우스 휠로 스크롤 할 때 발생
 * 스크롤이 완료될 때 까지 이벤트가 계속 발생됨
 * window.scrollY나 element.scrollTop 등 다양한 함수 및 속성을 사용하여 스크롤 위치를 확인하고 명령을 적용해야 함
+
+---
+# gsap.registerPlugin(ScrollTrigger)
+
+gsap.from(gsap(from) -> Css(to))/to(css(from) -> gsap(to))('target location', {
+     scrollTrigger : {
+        trigger : target,
+        markers : true,
+        start : "postion percentage"
+        end : "position percentage"
+})
+
+gsap.fromTo('target location', { //from
+    
+}, { //to
+ scrollTrigger: 'target'
+ // ScrollTrigger는 to에 입력할 것.
+})
+
+# ScrollTrigger.create()
+Callback function와 함께 스크롤 이벤트에 반응하는 애니메이션을 만들 때 사용
+* onEnter : trigger 가 start 지점을 지날 때 Callback function 실행
+* onLeave : trigger 가 end 지점을 지날 때 Callback function 실행
+* onUpdate : 스크롤이 움직일 때 마다 반복적으로 Callback function 실행.
+* toggleClass : start, end 지점을 지날 때 마다 클래스 적용 / 해제 반복
+
+#scrollTrigger - 가로 스크롤 애니메이션

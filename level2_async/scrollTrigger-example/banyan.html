@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/main.css">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <!-- padding 100 100 0 -->
+    <!-- header Nopadding -->
+    <style>
+        
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#"><img src="./images_banyan/logo_w.png" alt=""></a>
+        <ul><a href="#">Menu</a>
+            <li style="display: none;">##</li>
+        </ul>
+    </header>
+    <div id="popup"><button type="button" class="reservation">이너스 멤버 상담 예약</button></div>
+    <main id="wrap">
+        <div class="intropage">
+            <h1 class="title scaleTitle">banyan tree haeundae busan</h1>
+        </div>
+        <div class="page page1">
+            <span class="bg"></span>
+            <h1 class="title moveTitle">the best sanctuary for the senses</h1>
+            <p class="contents">
+                최상의 모든 조건, 반얀트리를 빛내는 브랜드 컬렉션, 그 중에서도 반약트리(Banyan Tree)는<br>
+                명실상부한 럭셔리 호스피탈리티의 최상급 브랜드입니다.<br>
+                전세계의 가장 아름답고 장엄한 자연 속에서 누리는 지역 고유의 경험.<br>
+                최고의 휴양을 선사하는 반얀트리를 만나보십시오. <br>
+            </p>
+        </div>
+        <div class="page page2">
+            <h1 class="title moveTitle">banyan tree haeundae</h1>
+            <p class="contents">
+                부산의 아름다운 오시리아, 그 곳 해변과 한 걸음. <br>
+                귀하께 2025년 반얀트리 해운대 부산의 탄생 소식을 전합니다. <br>
+                세계 곳곳에서 경험하던 반약트리의 휴식, 그 이상을 이제, 부산에서도 만나실 수 있습니다.
+            </p>
+        </div>
+        <div class="page page3">
+            <h1 class="title moveTitle">a home in the perfect world</h1>
+            <p class="contents">
+                반얀트리는 22개 국가에 48개의 호텔과 리조트, 64개의 스파, 골프 코스 및 레지던스를 운영하는 글로벌 기업입니다. <br>
+                완벽한 안식처를 향한 멈추지 않는 반얀트리의 노력그것은 이미, 국제적 권위를 가진 2700여 개 이상의 <br>
+                수상 경력이 증명하고 있습니다. 반얀트리 해운대 부산과 함께 세계 곳곳 이름 난 비경 속의 반얀트리를 만나십시오. <br>
+                지상 최고의 휴식을 선사하겠습니다.
+            </p>
+        </div>
+    </main>
+    <footer>
+        <img src="./images_banyan/footer_logo.jpg" alt="#">
+        <p>copyright © 2022 banyan tree haendaevusan. all rights reserved.</p>
+    </footer>
+    <script>
+        gsap.registerPlugin(ScrollTrigger)
+
+        const titleScaleAni=document.querySelector('.scaleTitle')
+        const titleMoveAni=document.querySelectorAll('.moveTitle')
+        const allTitle = document.querySelectorAll('.title')
+        const allPage = document.querySelectorAll('.page')
+        const Contents = document.querySelectorAll('.contents')
+
+        console.log(titleScaleAni, allTitle, titleMoveAni, allPage, Contents)
+
+        /* gsap 1 */
+        gsap.fromTo('.intropage .bg',
+        {
+            scale : 1.1,
+        },
+        {
+            scrollTrigger : {
+                trigger : '.intropage',
+                markers : true,
+                start : 'top 90%',
+                end : 'bottom 10%'
+            },
+            duration : 0.7,   
+            scale : 1,
+        })
+        
+
+        /* gsap 2 */
+        gsap.fromTo('.intropage .scaleTitle',
+        {
+            opacity : 0,
+            scale : 1.1,
+        },
+        {
+            scrollTrigger : {
+                trigger : '.intropage',
+                markers : true,
+                start : 'top 90%',
+                end : 'bottom 10%'
+            },
+            duration : 1.2,
+            opacity : 1,
+            scale : 1,
+            delay : 0.25
+        })
+
+        /* ====================================================== */
+
+        /* gsap 3 */
+
+        //제목을 움직일 거임
+        //페이지 2에 들어서면
+        //이에 반응해
+        allPage.forEach((object, index, array) => {
+            console.log(object, index, array)
+            gsap.fromTo(allPage[index],
+            {
+                opacity : 0,
+            },{
+                scrollTrigger : {
+                    trigger : allPage[index],
+                    markers : true,
+                    start : 'top 90%',
+                    end : 'bottom 10%'
+                    },
+                opacity: 1,
+                duration : 0.5
+                })
+            });
+
+        titleMoveAni.forEach((object, index, array) => {
+            console.log(object, index, array)
+            gsap.fromTo(titleMoveAni[index],
+            {
+                y : 150,
+                opacity : 0,
+            },{
+                scrollTrigger : {
+                    trigger : `.page${index+1}`,
+                    markers : true,
+                    start : 'top 90%',
+                    end : 'bottom 10%'
+                    },
+                y : 0,
+                opacity: 1,
+                duration : 1,
+                })
+            });
+
+        Contents.forEach((object, index, array) => {
+            console.log(object, index, array)
+            gsap.fromTo(Contents[index],
+            {
+                y : 200,
+                opacity : 0,
+            },{
+                scrollTrigger : {
+                    trigger : `.page${index+1}`,
+                    markers : true,
+                    start : 'top 90%',
+                    end : 'bottom 10%'
+                    },
+                y : 0,
+                opacity: 1,
+                duration : 1,
+                delay : 0.2
+                })
+            });
+
+        //page 2,3,4는 title과 문구가 다른 타이밍에 움직이나 title끼리, 그리고 문자끼리는 같은 속성을 공유하고 있음
+    </script>
+</body>
+</html>

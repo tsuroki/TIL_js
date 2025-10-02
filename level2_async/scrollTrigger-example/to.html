@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <style>
+        body {
+            background: linear-gradient(red, orange, yellow, palegreen, blue, violet)
+        }
+        body .box{
+            height: 100vh; 
+        }
+        body .box h1{
+            font-size : 2.5rem;
+        }
+        body .box:nth-child(2) h1{
+            opacity: 0;
+        }
+        
+        body .box2 {
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1">
+        <h1 class="title">1</h1>
+    </div>
+    <div class="box box2 animate-box">
+        <h1 class="title animate-title">2</h1>
+        <p class="contents">2-2</p>
+    </div>
+    <div class="box box3 animate-box">
+        <h1 class="title animate-title">3</h1>
+        <ul>
+            <li class="contents">3-2</li>
+        </ul>
+    </div>
+    <div class="box box4">
+        <h1 class="title">4</h1>
+    </div>
+    <script>
+        gsap.registerPlugin(ScrollTrigger) //scrollTrigger 필수
+        //script src를 이용해 ScrollTrigger 자바 스크립트를 불러오고 함수를 지정 후 원하는 data 값 입력하여 data에 대한 함수값 호출
+
+        const animateBox = document.querySelectorAll('.animate-box')
+        const Title = document.querySelectorAll('.animate-title')
+        const Contents = document.querySelectorAll('.contents')
+
+        console.log (animateBox, Title, Contents)
+
+        animateBox.forEach((object, index, array)=> {
+            console.log(object, index, array)
+            gsap.fromTo(Title[index],{
+                opacity : 0, y : 50
+            },{
+                scrollTrigger:{
+                    trigger : object,
+                    start : 'top center',
+                    markers : true
+                },
+                opacity : 1, y : 0, duration : 1
+            })
+            gsap.fromTo(Contents[index],{
+                opacity : 0, x : 100
+            },{
+                scrollTrigger:{
+                    trigger : object,
+                    start : 'top center',
+                    markers : true
+                },
+                opacity : 1, x : 0, duration : 1, delay : 0.3
+            })
+        })
+
+        /* gsap.to('.box2 h1', {
+            scrollTrigger : {
+                trigger : '.box2',
+                markers : true,
+            },
+            opacity : 1,
+            duration : 1,
+            x : 0,
+            delay : 0,
+        })
+        
+        gsap.fromTo('.box3 h1', {
+            opacity : 0,
+            x : 200,
+            y : 50
+        },{
+            scrollTrigger : {
+                trigger: '.box3',
+                markers : true
+            },
+            opacity : 1,
+            x : 0,
+            y : 0,
+            delay : 0.2,
+            duration : 1
+        }) */
+    </script>
+</body>
+</html>

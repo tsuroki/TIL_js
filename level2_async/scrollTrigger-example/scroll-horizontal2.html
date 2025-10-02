@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <title> | 가로 스크롤 트리거 활용</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+</head>
+<style>
+    header {
+        height: 150px; width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        z-index: 999;
+    }
+    header h1 {width: 150px; height: 150px; margin-left: 50px;position: relative;}
+    header h1 img {width: 100%; height: 100%;}
+    header h1::after {
+        position: absolute;
+        content: '';
+        background-color: #fff;
+        width: 100%;
+        height: 1px;
+        display: inline-block;
+        z-index: 700;
+        left: 0;
+        bottom : 15px; 
+        scale: 0.6;
+    }
+    header ul {}
+    header ul a {margin-right: 100px; color: #fff; font-weight: 600; font-size: 1.25rem;}
+    /* === */
+    main {}
+    main .box::after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100vh;
+        left: 0;
+        top : 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 500;
+    }
+    main .box {
+        background-image: url(https://i.pinimg.com/1200x/14/06/1e/14061e9a1e8165e897355e0a5d15adea.jpg); width: 100%; height: 100vh;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+    }
+    main .box h1 {
+        position: absolute;
+        color: #fff;
+        z-index: 700;
+        font-size: 4rem;
+        font-weight: 600;
+        letter-spacing: 10px;
+        text-transform: uppercase   ;
+        width: 100vw;
+        text-align: center;
+        line-height: 1.2;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    main .wrapper {
+        overflow: hidden;
+        width: 100vw;
+        height: 100vh;
+    }
+    main .wrapper .container {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-content: flex-start; width: 200vw;
+    }
+    main .wrapper .container .contents {}
+    main .wrapper .container .content1 {
+        position: relative;
+        background-image: url(https://i.ytimg.com/vi/o-Tn0ds18oY/sddefault.jpg);
+        width: 100vw; height: 100vh;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: #000;
+    }
+    main .wrapper .container .content1 .albumdate {
+        position: absolute;
+        width: 100%;
+        top: 80px;
+    }
+    main .wrapper .container .content1 .albumdate .year {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 5rem; font-weight: 600;
+        color: #fff;
+    }
+    main .wrapper .container .content1 .albumdate .date {
+        text-align: center;
+        font-size: 5rem; font-weight: 600;
+        color: #fff;
+    }
+    main .wrapper .container .content1 .phrase {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        bottom: 120px;
+    }
+    main .wrapper .container .content1 .phrase .phrase1 {
+        width: 100%;
+        color: #fff;
+        font-size: 3rem;
+        text-align: center;
+        bottom: 150px;
+        line-height: 1.2;
+    }
+    main .wrapper .container .content1 .phrase .phrase2 {
+        width: 100%;
+        color: #fff;
+        font-size: 3rem;
+        text-align: center;
+        bottom: 150px;
+        line-height: 1.2;
+    }
+    main .wrapper .container .content2 {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+    }   
+    main .wrapper .container .content3 {
+    }
+</style>
+<body>
+    <header>
+        <h1><img src="./images/Kenshi_logo.png" alt="#"></h1>
+        <ul class="menu"><a href="">Album</a>
+            <li style="display:none">##</li>
+        </ul>
+    </header>
+    <main>
+        <div class="box">
+            <h1>Yonezu <br>
+            kenshi</h1>
+        </div>
+        <div class="wrapper">
+            <div class="container">
+                <div class="contents content1">
+                    <div class="albumdate">
+                        <h1 class="year">2025</h1>
+                        <p class="date">09.15</p>
+                    </div>
+                    <div class="phrase">
+                        <p class="phrase1">DISCOGRAPHY</p>
+                        <p class="phrase2">is coming</p>
+                    </div>
+                </div>
+                <div class="contents content2">
+                    <h1>CHAINSAW MAN</h1>
+                    <p><img src="./images/poster.jpg" alt=""></p>
+                    <p>in cinema</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        gsap.registerPlugin(ScrollTrigger)
+        const contents = document.querySelector('.contents')
+        console.log(contents)
+        const scrollWidth = contents.offsetWidth = window.innerWidth;
+        gsap.utils.toArray('.container').forEach((obj) => {
+            console.log(obj)
+            const Chainsaw = gsap.timeline({
+                scrollTrigger : {
+                    start : 'center center',
+                end: ()=> "+=" + scrollWidth,
+                scrub : true,
+                pin : true,
+                anticipatePin : 1,
+                }, defaults:{ease:'none'}, //균등 속도
+                })
+            Chainsaw.fromTo(obj.querySelector('.contents'),
+            {
+                x: 0,
+            },{
+                x: -scrollWidth,
+            })
+            })
+    </script>
+</body>
+</html>
